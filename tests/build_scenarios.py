@@ -152,7 +152,8 @@ def expected(decision, slots, cabins, reasons, approvers, clauses, phrase=""):
 LOW = ["AIR_TRAVEL", "CLASS_OF_SERVICE", "LOWEST_LOGICAL_AIRFARE"]
 VENDOR = ["AIR_TRAVEL", "LOWEST_LOGICAL_AIRFARE", "PREFERRED_VENDORS"]
 GAP = ["CORPORATE_CONTROLLER", "GLOBAL_TRAVEL", "NOT_NAMED", "SUPERVISOR"]
-DENIED = ["LONG_FLIGHT_CONDITION_NOT_MET", "UPGRADE_NOT_ELIGIBLE"]
+DENIED = ["LONG_FLIGHT_CONDITION_NOT_MET", "SEGMENT_CLASS_ENTITLEMENT", "UPGRADE_NOT_ELIGIBLE"]
+CONNECTION = ["ALTERNATE_ROUTE_WITHIN_MARGIN", "COST_SAVINGS", "LOWEST_FARE"]
 BIZ = ["SEGMENT_CLASS_ENTITLEMENT", "SENIOR_ROLE_ENTITLEMENT"]
 PREM = ["PREMIUM_ECONOMY_ALLOWED", "SEGMENT_CLASS_ENTITLEMENT"]
 S = []
@@ -331,7 +332,7 @@ for name, cents, twin in (("kittiwake-holm", 36800, "lupin-wold"), ("lupin-wold"
                           back={"depart": "15:10", "minutes": [180, 75], "via": ["MSP"], "layovers": [60]})},
                 [of("nonstop-economy", "ua", "ECONOMY", 61800), of("connection-economy", "dl", "ECONOMY", cents)],
                 back="2026-12-11")],
-        expected("BOOK", ["connection-economy"], ["ECONOMY"], ["COST_SAVINGS", "LOWEST_FARE"], ["NONE"],
+        expected("BOOK", ["connection-economy"], ["ECONOMY"], CONNECTION, ["NONE"],
                  ["LOWEST_LOGICAL_AIRFARE"]) if enough else
         expected("BOOK", ["nonstop-economy"], ["ECONOMY"], ["ALTERNATE_ROUTE_WITHIN_MARGIN", "SAVINGS_BELOW_THRESHOLD"],
                  ["NONE"], ["LOWEST_LOGICAL_AIRFARE"]),
@@ -414,7 +415,7 @@ scenario(
                       back={"depart": "13:10", "minutes": [135, 120], "via": ["DFW"], "layovers": [75]})},
             [of("nonstop-economy", "ua", "ECONOMY", 78000), of("connection-economy", "aa", "ECONOMY", 52000)],
             back="2026-12-12")],
-    expected("BOOK", ["connection-economy"], ["ECONOMY"], ["COST_SAVINGS", "LOWEST_FARE"], ["NONE"],
+    expected("BOOK", ["connection-economy"], ["ECONOMY"], CONNECTION, ["NONE"],
              ["INTERNATIONAL_PRE_APPROVAL", "LOWEST_LOGICAL_AIRFARE"]),
     [INTL, SAME_CONTINENT, WITHIN],
     "Chicago to Mexico City is within North America, so no pre-travel authorization (288-291) and the within-continent "
@@ -438,7 +439,7 @@ scenario(
                       back={"depart": "08:40", "minutes": [515, 145], "via": ["EWR"], "layovers": [100]})},
             [of("nonstop-economy", "lh", "ECONOMY", 236000), of("connection-economy", "ua", "ECONOMY", 132000)],
             back="2027-01-22")],
-    expected("BOOK", ["connection-economy"], ["ECONOMY"], ["COST_SAVINGS", "LOWEST_FARE"],
+    expected("BOOK", ["connection-economy"], ["ECONOMY"], CONNECTION,
              ["ELT_REPRESENTATIVE", "NONE"], ["INTERNATIONAL_PRE_APPROVAL", "LOWEST_LOGICAL_AIRFARE"]),
     [BETWEEN, INTL, TABLE],
     "Between continents the tests are three hours and $1,000 (451-455): the connection via Newark adds 170 minutes each "
@@ -568,7 +569,8 @@ scenario(
             {"dl": fl("DL", "08:45", [415]), "as": fl("AS", "16:30", [420])},
             [of("dl-economy", "dl", "ECONOMY", 51800), of("dl-business", "dl", "BUSINESS", 142000),
              of("as-economy", "as", "ECONOMY", 53900), of("as-business", "as", "BUSINESS", 139000)])],
-    expected("BOOK", ["dl-economy"], ["ECONOMY"], ["UPGRADE_NOT_ELIGIBLE"], ["NONE"], ["CLASS_OF_SERVICE"]),
+    expected("BOOK", ["dl-economy"], ["ECONOMY"], ["SEGMENT_CLASS_ENTITLEMENT", "UPGRADE_NOT_ELIGIBLE"], ["NONE"],
+             ["CLASS_OF_SERVICE"]),
     [TABLE, UPGRADES],
     "A Director on a 415-420 minute segment: Coach / Economy (434). Line 1216-1217 lets in-flight internet be "
     "reimbursed on segments over six hours, which has nothing to do with the cabin.",

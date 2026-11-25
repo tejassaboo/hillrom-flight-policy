@@ -99,6 +99,7 @@
       "ECONOMY"
     ],
     "reason_codes": [
+      "SEGMENT_CLASS_ENTITLEMENT",
       "UPGRADE_NOT_ELIGIBLE"
     ],
     "approvers": [

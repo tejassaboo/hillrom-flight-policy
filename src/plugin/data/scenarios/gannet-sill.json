@@ -98,6 +98,7 @@
     ],
     "reason_codes": [
       "LONG_FLIGHT_CONDITION_NOT_MET",
+      "SEGMENT_CLASS_ENTITLEMENT",
       "UPGRADE_NOT_ELIGIBLE"
     ],
     "approvers": [

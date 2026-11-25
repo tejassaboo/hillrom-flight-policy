@@ -352,7 +352,8 @@ def employee(trip, route):
         if reasons != [ReasonCode.LOWEST_FARE]:
             raise ValueError("a refused upgrade together with another fare rule is not modelled")
         row = TABLE[position(trip)]
-        reasons = [ReasonCode.UPGRADE_NOT_ELIGIBLE]
+        # SEGMENT_CLASS_ENTITLEMENT names the ground too: the table's class for the segment (w2 validation, gannet-sill).
+        reasons = [ReasonCode.UPGRADE_NOT_ELIGIBLE, ReasonCode.SEGMENT_CLASS_ENTITLEMENT]
         if requested in row:
             reasons.append(ReasonCode.LONG_FLIGHT_CONDITION_NOT_MET)
         clauses = [Clause.CLASS_OF_SERVICE]
@@ -515,7 +516,10 @@ def routing(trip, pool, between):
         raise ValueError(f"this routing is not modelled ({numbers})")
     lines = "451-455" if between else "438-445"
     if saving >= threshold:
-        return ([connection], [ReasonCode.COST_SAVINGS, ReasonCode.LOWEST_FARE], [Clause.LOWEST_LOGICAL_AIRFARE],
+        # ALTERNATE_ROUTE_WITHIN_MARGIN read as "the alternate (connecting) route is within the tests" is defensible
+        # (w2 validation, rowan-skerry); the twin's nonstop is still told apart by the offer.
+        return ([connection], [ReasonCode.COST_SAVINGS, ReasonCode.LOWEST_FARE, ReasonCode.ALTERNATE_ROUTE_WITHIN_MARGIN],
+                [Clause.LOWEST_LOGICAL_AIRFARE],
                 f"Lines {lines}: the connection is the lowest logical airfare ({numbers}).")
     return ([nonstop], [ReasonCode.SAVINGS_BELOW_THRESHOLD, ReasonCode.ALTERNATE_ROUTE_WITHIN_MARGIN],
             [Clause.LOWEST_LOGICAL_AIRFARE],
