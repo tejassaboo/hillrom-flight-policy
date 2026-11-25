@@ -297,7 +297,8 @@ def companion(trip, route):
     low, reasons, _, why = lowest(trip, [offer for offer in route if offer.cabin == Cabin.ECONOMY])
     return answer(Decision.BOOK, low, [ReasonCode.COMPANION_BUSINESS_PURPOSE_APPROVED, *reasons],
                   [Approver.ELT_MEMBER, Approver.ELT_REPRESENTATIVE, Approver.NONE],
-                  [Clause.SPOUSE_COMPANION, Clause.MEETING_COMPANION],
+                  # LOWEST_FARE is accepted, so the lowest-fare section is too (audit).
+                  [Clause.SPOUSE_COMPANION, Clause.MEETING_COMPANION, Clause.LOWEST_LOGICAL_AIRFARE],
                   "Lines 358-361: a bona fide business purpose, approved in advance in writing by the employee's "
                   f"ELT member. {why}")
 
@@ -364,6 +365,8 @@ def employee(trip, route):
         clauses = [Clause.CLASS_OF_SERVICE] + ([] if clauses == LOW_CLAUSES else clauses)
         why = f"Lines 424-435: {ROW_NAMES[position(trip)]} earns {cabin.value} on every segment. {why}"
     if limited:
+        # The requested flight is declined under lines 490-494, so the reason names that rule, never LOWEST_FARE
+        # (lead's uniform rule: a declined request's reason gives why it is declined).
         reasons = [ReasonCode.TRAVELLER_LIMIT_PER_FLIGHT, *limited]
         clauses = [Clause.KEY_PERSONNEL]
         why = f"Lines 490-494: the cheaper flight would break the limit ({limited[0].value}); {why}"
@@ -396,7 +399,10 @@ def gap_hold(trip, sellable, requested, gap, between, signers):
     held = []
     for cabin in (left, right):
         held += cheapest([offer for offer in sellable if offer.cabin == cabin and not offer.refundable])
-    return answer(Decision.FLAG_FOR_APPROVAL, held, [ReasonCode.UNCLEAR_POLICY_TEXT], GAP_APPROVERS,
+    # The hold also awaits direction from the roles of lines 159-160, so APPROVAL_REQUIRED is accepted beside the
+    # unclear words (audit; NJC iron-plover).
+    return answer(Decision.FLAG_FOR_APPROVAL, held, [ReasonCode.UNCLEAR_POLICY_TEXT, ReasonCode.APPROVAL_REQUIRED],
+                  GAP_APPROVERS,
                   [Clause.CLASS_OF_SERVICE, Clause.RESPONSIBILITY],
                   f"Lines 428-435: a segment of exactly {gap} minutes is in no column of the table, and the columns "
                   f"beside it give {left.value} and {right.value}; line 159-160: a situation the policy does not "
@@ -456,6 +462,7 @@ def loyalty(trip, pool):
     if not asked or trip.requested_airline in trip.preferred_airlines:
         raise ValueError("a requested airline that is preferred or not on the route is not modelled")
     if ReasonCode.PREFERRED_CARRIER_REQUIRED in reasons and asked[0].fare_cents == low[0].fare_cents:
+        # The requested airline is declined under lines 400-401 and 461-464: no generic LOWEST_FARE (lead's rule).
         return (low, [ReasonCode.PREFERRED_CARRIER_REQUIRED, ReasonCode.LOYALTY_PROGRAM_PREFERENCE], clauses,
                 f"Lines 463-464: not a non-preferred airline over a preferred one at an equal fare. {why}")
     if low == asked:
@@ -478,7 +485,8 @@ def refundable(trip, pool, between):
     if differential < REFUNDABLE_MARGIN_CENTS:
         return (free, [ReasonCode.REFUNDABLE_WITHIN_MARGIN], [Clause.LOWEST_LOGICAL_AIRFARE],
                 f"Line 446: the refundable fare costs less than $150 more ({numbers}), so it may be booked.")
-    return (fixed, [ReasonCode.REFUNDABLE_FARE_NOT_ALLOWED, ReasonCode.LOWEST_FARE], [Clause.LOWEST_LOGICAL_AIRFARE],
+    # The requested refundable fare is declined under line 446, not the generic lowest-fare rule (lead's rule).
+    return (fixed, [ReasonCode.REFUNDABLE_FARE_NOT_ALLOWED], [Clause.LOWEST_LOGICAL_AIRFARE],
             f"Line 446: the refundable fare costs $150 or more extra ({numbers}), so the non-refundable one.")
 
 

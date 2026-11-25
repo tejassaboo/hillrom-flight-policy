@@ -92,7 +92,6 @@
       "ECONOMY"
     ],
     "reason_codes": [
-      "LOWEST_FARE",
       "REFUNDABLE_FARE_NOT_ALLOWED"
     ],
     "approvers": [

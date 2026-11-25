@@ -171,7 +171,8 @@ def scenario(id, category, overlays, request, trip_, searches, exp, must_keep, n
 # ============================== easy ==============================
 scenario(
     "alder-bight", "easy", [],
-    "I'm visiting the Emory hospital account in Atlanta on December 9. Economy, please - whatever fits policy.",
+    "I'm flying to Atlanta on December 9 to visit the Emory hospital account the next morning. Economy, please - "
+    "whatever fits policy.",
     trip(traveller_name="Rachel Owens", traveller_title="Senior Account Manager", supervisor="Paul Grady, Area Director",
          origin="ORD", destination="ATL", travel_date="2026-12-09", booking_date="2026-11-30",
          purpose="Account review at a hospital customer in Atlanta",
@@ -188,7 +189,8 @@ scenario(
 
 scenario(
     "bramble-tor", "easy", ["dearer_option"],
-    "Please book me business class to San Francisco on December 11 for the West region leadership offsite.",
+    "Please book me business class to San Francisco on December 11 for the West region leadership offsite, which "
+    "starts the next day.",
     trip(traveller_name="Gloria Benton", traveller_title="Senior Vice President, Human Resources", elt_member=True,
          supervisor="Marcus Hale, President and CEO", origin="ORD", destination="SFO", travel_date="2026-12-11",
          booking_date="2026-11-30", purpose="West region leadership offsite", purpose_kind="INTERNAL_MEETING",
@@ -204,8 +206,8 @@ scenario(
 
 scenario(
     "cinder-fell", "easy", ["date_arithmetic", "month_end", "outside_air_section"],
-    "I have to be at the Frankfurt distributor training on December 10. Economy is fine. Diane already approved the "
-    "trip by email.",
+    "I fly out to Frankfurt on December 10 for the distributor training there on December 12. Economy is fine. Diane "
+    "already approved the trip by email.",
     trip(traveller_name="Kevin Marsh", traveller_title="Clinical Education Manager",
          supervisor="Mark Ellison, Director, Clinical Education", origin="ORD", destination="FRA",
          travel_date="2026-12-10", booking_date="2026-11-28", purpose="Distributor training in Frankfurt",
@@ -225,7 +227,7 @@ scenario(
 
 scenario(
     "drumlin-sedge", "easy", [],
-    "Economy to Dallas on December 8 for the Baylor Scott & White installation review, please.",
+    "Economy to Dallas on December 8, please, for the Baylor Scott & White installation review the next day.",
     trip(traveller_name="Dana Whitfield", traveller_title="Field Service Manager",
          supervisor="Craig Lund, Director, Field Service", origin="ORD", destination="DFW", travel_date="2026-12-08",
          booking_date="2026-12-01", purpose="Installation review at a hospital customer in Dallas"),
@@ -239,7 +241,8 @@ scenario(
 
 scenario(
     "egret-shale", "easy", ["upgrade_not_taken", "outside_air_section"],
-    "I'm going to London for the NHS tender meeting on December 15. Economy is fine for me; Henrik signed off.",
+    "I'm flying to London on December 15 for the NHS tender meeting on December 17. Economy is fine for me; Henrik "
+    "signed off.",
     trip(traveller_name="Laura Pierce", traveller_title="Vice President, International Sales",
          supervisor="Henrik Aalto, Regional President, Europe", origin="JFK", destination="LHR", travel_date="2026-12-15",
          booking_date="2026-12-01", purpose="NHS tender meeting in London",
@@ -256,7 +259,7 @@ scenario(
 
 scenario(
     "fernwick-cove", "easy", [],
-    "Book me economy London to Frankfurt on December 7 for the EMEA service meeting, please.",
+    "Book me economy London to Frankfurt on December 7, please, for the EMEA service meeting the next day.",
     trip(traveller_name="Oliver Grant", traveller_title="Service Sales Manager, UK", home_country="GB",
          supervisor="Sophie Lang, Director, EMEA Service", origin="LHR", destination="FRA", travel_date="2026-12-07",
          booking_date="2026-11-30", purpose="EMEA service meeting in Frankfurt", purpose_kind="INTERNAL_MEETING"),
@@ -354,7 +357,7 @@ for name, cents, twin in (("mallow-crag", 42300, "nettle-brae"), ("nettle-brae",
                  of("aa-saver", "aa", "ECONOMY", 29900)])],
         expected("BOOK", ["ua-flex"], ["ECONOMY"], ["REFUNDABLE_WITHIN_MARGIN"], ["NONE"], ["LOWEST_LOGICAL_AIRFARE"])
         if within else
-        expected("BOOK", ["ua-saver"], ["ECONOMY"], ["LOWEST_FARE", "REFUNDABLE_FARE_NOT_ALLOWED"], ["NONE"],
+        expected("BOOK", ["ua-saver"], ["ECONOMY"], ["REFUNDABLE_FARE_NOT_ALLOWED"], ["NONE"],
                  ["LOWEST_LOGICAL_AIRFARE"]),
         [REFUND, LOGICAL],
         f"The refundable fare costs {cents - 27400} cents more than the non-refundable one on the same flight: "
@@ -377,7 +380,7 @@ REQ_BOARD = ("Book me to LaGuardia on December 9 for the board meeting. Economy 
 
 scenario(
     "osprey-dene", "multi_rule", ["multi_traveller", "dearer_option", "upgrade_not_taken"], REQ_BOARD,
-    trip(**CFO, colleagues=[CEO_C, CLO_C], notes=[f"The CEO and the Chief Legal Officer are booked on {X}."]),
+    trip(**CFO, colleagues=[CEO_C, CLO_C], notes=[f"The CEO and the Chief Legal Officer are booked on {X}.", "The board meets at 13:00."]),
     [search("out", "ORD", "LGA", "2026-12-09", BOARD_FLIGHTS, BOARD_OFFERS)],
     expected("BOOK", ["aa-economy"], ["ECONOMY"], ["KEY_OFFICERS_TOGETHER", "TRAVELLER_LIMIT_PER_FLIGHT"], ["NONE"],
              ["KEY_PERSONNEL"]),
@@ -389,7 +392,7 @@ scenario(
 
 scenario(
     "plover-ghyll", "multi_rule", ["multi_traveller", "upgrade_not_taken"], REQ_BOARD,
-    trip(**CFO, colleagues=[CEO_C], notes=[f"The CEO is booked on {X}."]),
+    trip(**CFO, colleagues=[CEO_C], notes=[f"The CEO is booked on {X}.", "The board meets at 13:00."]),
     [search("out", "ORD", "LGA", "2026-12-09", BOARD_FLIGHTS, BOARD_OFFERS)],
     expected("BOOK", ["ua-economy"], ["ECONOMY"], ["LOWEST_FARE"], ["NONE"], [*LOW, "KEY_PERSONNEL"]),
     [KEY, TABLE, LOGICAL],
@@ -454,14 +457,15 @@ COMPANION_SEARCH = [search("out", "ORD", "MCO", "2027-02-22",
 
 scenario(
     "sorrel-haugh", "multi_rule", ["multi_traveller", "outside_air_section"],
-    "Please book my wife Elena to Orlando on February 22 for the customer partners' event - she's hosting the "
-    "partners' program, and Diane approved it last week.",
+    "Please book my wife Elena to Orlando on February 22 for the customer partners' event that opens the next day - "
+    "she's hosting the partners' program, and Diane approved it last week.",
     trip(**COMPANION, purpose="Hosting the partners' program at the customer partners' event in Orlando",
          companion_business_purpose="Hosts the program for customers' partners at the Company's partners' event",
          approvals=[sign(SVP_OPS, "COMPANION_TICKET", "2026-11-26")]),
     COMPANION_SEARCH,
     expected("BOOK", ["wn-economy"], ["ECONOMY"], ["COMPANION_BUSINESS_PURPOSE_APPROVED", "LOWEST_FARE"],
-             ["ELT_MEMBER", "ELT_REPRESENTATIVE", "NONE"], ["MEETING_COMPANION", "SPOUSE_COMPANION"]),
+             ["ELT_MEMBER", "ELT_REPRESENTATIVE", "NONE"],
+             ["LOWEST_LOGICAL_AIRFARE", "MEETING_COMPANION", "SPOUSE_COMPANION"]),
     [SPOUSE, MEET_SPOUSE],
     "A bona fide business purpose and the ELT member's advance written approval (356-361, 865-871): the companion's "
     "ticket at the lowest fare.",
@@ -470,8 +474,8 @@ scenario(
 # ============================== hidden clause ==============================
 scenario(
     "thistle-moraine", "hidden_clause", ["multi_leg"],
-    "I'm headed to Anchorage on December 10 for the Alaska Native Medical Center visit. It's well over seven hours of "
-    "flying through Seattle, so business class please.",
+    "I'm headed to Anchorage on December 10 for the Alaska Native Medical Center visit the next day. It's well over "
+    "seven hours of flying through Seattle, so business class please.",
     trip(traveller_name="Thomas Reyes", traveller_title="Vice President, Global Marketing",
          supervisor=f"{ELT_REP}, Senior Vice President, Global Operations", origin="ORD", destination="ANC",
          travel_date="2026-12-10", booking_date="2026-12-01", purpose="Customer visit at a medical center in Anchorage",
@@ -488,12 +492,13 @@ scenario(
 
 scenario(
     "umber-carse", "hidden_clause", ["outside_air_section"],
-    "I need to be in London on January 19 for the NHS Supply Chain negotiation - business class one way, please. "
-    "Henrik approved the trip.",
+    "I fly to London on January 19 for the NHS Supply Chain negotiation on January 21 - business class one way, "
+    "please. Henrik approved the trip.",
     trip(traveller_name="Laura Pierce", traveller_title="Vice President, International Sales",
          supervisor="Henrik Aalto, Regional President, Europe", origin="ORD", destination="LHR", travel_date="2027-01-19",
          booking_date="2026-12-02", purpose="Supply contract negotiation in central London", requested_cabin="BUSINESS",
-         approvals=[sign(RP_EUROPE, "TRIP", "2026-12-01")]),
+         approvals=[sign(RP_EUROPE, "TRIP", "2026-12-01")],
+         notes=["Central London is served by London Gatwick (LGW) as well as London Heathrow (LHR)."]),
     [search("heathrow", "ORD", "LHR", "2027-01-19",
             {"ba": fl("BA", "18:10", [470]), "aa": fl("AA", "20:05", [465])},
             [of("lhr-ba-economy", "ba", "ECONOMY", 92000), of("lhr-ba-business", "ba", "BUSINESS", 560000),
@@ -506,12 +511,13 @@ scenario(
              ["NONE", "REGIONAL_PRESIDENT"], ["CLASS_OF_SERVICE", "INTERNATIONAL_PRE_APPROVAL", "LOWEST_LOGICAL_AIRFARE"]),
     [TABLE, ALTERNATES, BETWEEN, INTL],
     "A Vice President over six hours: business (433). Alternate airports are considered, Gatwick for Heathrow by name "
-    "(456-459): Gatwick business saves 132000 cents (at least $1,000) and adds 5 minutes, so every reading books it.")
+    "(456-459), and the trip record names Gatwick as serving central London: Gatwick business saves 132000 cents (at "
+    "least $1,000) and adds 5 minutes, so every reading books it.")
 
 scenario(
     "vetch-linn", "hidden_clause", ["synonym"],
-    "Boston on December 16 for the Mass General meeting. Put me on American - I'm close to Platinum, and it's the "
-    "same price as United anyway. Economy.",
+    "Boston on December 16 for the Mass General meeting the next day. Put me on American - I'm close to Platinum, "
+    "and it's the same price as United anyway. If American isn't possible, book what the policy allows. Economy.",
     trip(traveller_name="Megan Shaw", traveller_title="Regional Sales Manager", supervisor="Paul Grady, Area Director",
          origin="ORD", destination="BOS", travel_date="2026-12-16", booking_date="2026-12-02",
          purpose="Meeting at a hospital customer in Boston", requested_airline="American Airlines",
@@ -520,8 +526,9 @@ scenario(
             {"aa": fl("AA", "07:40", [145]), "ua": fl("UA", "09:05", [140]), "dl": fl("DL", "11:30", [145])},
             [of("aa-economy", "aa", "ECONOMY", 31400), of("ua-economy", "ua", "ECONOMY", 31400),
              of("dl-economy", "dl", "ECONOMY", 33900)])],
-    expected("BOOK", ["ua-economy"], ["ECONOMY"], ["LOYALTY_PROGRAM_PREFERENCE", "PREFERRED_CARRIER_REQUIRED"],
-             ["NONE"], ["FREQUENT_FLYER", *VENDOR]),
+    expected("BOOK", ["ua-economy"], ["ECONOMY"],
+             ["LOYALTY_PROGRAM_PREFERENCE", "PREFERRED_CARRIER_REQUIRED"], ["NONE"],
+             ["FREQUENT_FLYER", *VENDOR]),
     [FREQUENT, PREF_AIR, PREF_VENDORS],
     "Equal fares: the preferred airline is required (400-401, 331-332), and frequent-flyer programs must not lead to a "
     "non-preferred vendor 'even if the costs are equal' (463-464).",
@@ -530,8 +537,8 @@ scenario(
 # ============================== distractors ==============================
 scenario(
     "wren-scaur", "distractor", [],
-    "Boston on December 16 for the Mass General meeting. Put me on American - I'm close to Platinum, and it's a "
-    "dollar cheaper than United anyway. Economy.",
+    "Boston on December 16 for the Mass General meeting the next day. Put me on American - I'm close to Platinum, "
+    "and it's a dollar cheaper than United anyway. If American isn't possible, book what the policy allows. Economy.",
     trip(traveller_name="Megan Shaw", traveller_title="Regional Sales Manager", supervisor="Paul Grady, Area Director",
          origin="ORD", destination="BOS", travel_date="2026-12-16", booking_date="2026-12-02",
          purpose="Meeting at a hospital customer in Boston", requested_airline="American Airlines",
@@ -597,7 +604,7 @@ scenario(
 scenario(
     "aster-fold", "refusal", ["multi_traveller", "personal_travel", "outside_air_section"],
     "Please book my wife Elena on a flight to Orlando on February 22 too - she'll enjoy the parks while I'm at the "
-    "customer partners' event.",
+    "customer partners' event that opens the next day.",
     trip(**COMPANION, purpose="Sightseeing in Orlando while her husband attends a customer partners' event"),
     COMPANION_SEARCH,
     expected("REFUSE", [], ["NONE"], ["COMPANION_NOT_COVERED", "PERSONAL_TRAVEL_NOT_COVERED"], ["NONE"],
@@ -651,7 +658,8 @@ scenario(
             {"dl": fl("DL", "08:10", [360]), "aa": fl("AA", "14:05", [360])},
             [of("dl-economy", "dl", "ECONOMY", 42000), of("dl-business", "dl", "BUSINESS", 128000),
              of("aa-economy", "aa", "ECONOMY", 44500), of("aa-business", "aa", "BUSINESS", 131000)])],
-    expected("FLAG_FOR_APPROVAL", ["dl-business", "dl-economy"], ["BUSINESS", "ECONOMY"], ["UNCLEAR_POLICY_TEXT"], GAP,
+    expected("FLAG_FOR_APPROVAL", ["dl-business", "dl-economy"], ["BUSINESS", "ECONOMY"],
+             ["APPROVAL_REQUIRED", "UNCLEAR_POLICY_TEXT"], GAP,
              ["CLASS_OF_SERVICE", "RESPONSIBILITY"], "< 6 hours > 6 hours"),
     [TABLE, NOT_COVERED],
     "A Vice President on a nonstop of exactly 360 minutes: the table's columns are '< 6 hours' (coach) and '> 6 hours "
@@ -674,8 +682,8 @@ scenario(
             {"ua": fl("UA", "11:20", [600]), "nh": fl("NH", "13:05", [600])},
             [of("ua-economy", "ua", "ECONOMY", 89000), of("ua-premium", "ua", "PREMIUM_ECONOMY", 165000),
              of("nh-economy", "nh", "ECONOMY", 94000), of("nh-premium", "nh", "PREMIUM_ECONOMY", 171000)])],
-    expected("FLAG_FOR_APPROVAL", ["ua-economy", "ua-premium"], ["ECONOMY", "PREMIUM_ECONOMY"], ["UNCLEAR_POLICY_TEXT"],
-             GAP, ["CLASS_OF_SERVICE", "RESPONSIBILITY"], "< 10 hours > 10 hours"),
+    expected("FLAG_FOR_APPROVAL", ["ua-economy", "ua-premium"], ["ECONOMY", "PREMIUM_ECONOMY"],
+             ["APPROVAL_REQUIRED", "UNCLEAR_POLICY_TEXT"], GAP, ["CLASS_OF_SERVICE", "RESPONSIBILITY"], "< 10 hours > 10 hours"),
     [TABLE, NOT_COVERED, INTL],
     "A Director on a nonstop of exactly 600 minutes: '> 6 hours and < 10 hours' gives coach, '> 10 hours' premium "
     "coach; exactly ten hours is in neither (434-435). The trip itself is authorized (288).",
@@ -686,8 +694,8 @@ scenario(
 
 scenario(
     "finch-holt", "flag", ["approval_required", "outside_air_section"],
-    "I have to be at the Frankfurt distributor training on December 10. Economy is fine. My manager Mark already "
-    "signed off on the trip by email.",
+    "I fly out to Frankfurt on December 10 for the distributor training there on December 12. Economy is fine. My "
+    "manager Mark already signed off on the trip by email.",
     trip(traveller_name="Kevin Marsh", traveller_title="Clinical Education Manager",
          supervisor="Mark Ellison, Director, Clinical Education", origin="ORD", destination="FRA",
          travel_date="2026-12-10", booking_date="2026-11-28", purpose="Distributor training in Frankfurt",
@@ -709,7 +717,8 @@ scenario(
 scenario(
     "gorse-haven", "flag", ["multi_traveller", "approval_required", "upgrade_not_taken"], REQ_BOARD,
     trip(**CFO, colleagues=[CEO_C, CLO_C], notes=[f"The CEO and the Chief Legal Officer are booked on {X}.",
-                                                 "The board meets at 13:00; no other flight that morning is listed."]),
+                                                 ("The board meets at 13:00. The CFO cannot leave Chicago before the "
+                                                  "morning of December 9, and no other flight that morning is listed.")]),
     [search("out", "ORD", "LGA", "2026-12-09", {"ua": fl("UA", "07:00", [125])},
             [of("ua-economy", "ua", "ECONOMY", 21800), of("ua-business", "ua", "BUSINESS", 64000)])],
     expected("FLAG_FOR_APPROVAL", ["ua-economy"], ["ECONOMY"],

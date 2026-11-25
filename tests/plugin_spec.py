@@ -47,7 +47,7 @@ ID_CATEGORY_ENUMS = [contract.Passenger, contract.Purpose, contract.ApprovalSubj
 # How many scenarios a degenerate agent may pass: one that always holds the right offer for approval, and
 # one that always books the cheapest seat (with the right section). Set to what each actually passes (README).
 MAX_PASS_ALWAYS_FLAG = 2
-MAX_PASS_ALWAYS_LOWEST = 12  # README: domestic and authorized bookings whose answer is the lowest fare
+MAX_PASS_ALWAYS_LOWEST = 11  # README: domestic and authorized bookings whose answer is the lowest fare
 
 # Hand-built duration cases beyond the automatic both-sides tests: (rule, scheduled minutes per flight, layovers,
 # expected True / False / None). Every rule is asked per segment (lines 425-426): a connection is over only when

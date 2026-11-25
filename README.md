@@ -44,7 +44,7 @@ the cap: run `full` locally with a raised cap.
 
 - **Input:** `TaskInput`: `scenario` (one of 32 case ids) and `request`, the traveller's own words.
 - **Steps:** `get_trip`, then `search_flights` on each route and date the decision needs (one search for every case
-  but `umber-carse`, which needs the alternate London airport too; the round-trip cases search with the record's
+  but `umber-carse`, which needs the alternate London airport its trip record names too; the round-trip cases search with the record's
   return date), then `submit`.
 - **Output:** `BookingOutput`: `decision`, `offer_id` (empty when refusing), `cabin` (`NONE` when refusing;
   otherwise the chosen offer's own cabin), `reason_code`, `approver` and `clause`, each from a closed list. The
@@ -75,12 +75,12 @@ the cap: run `full` locally with a raised cap.
 | `kittiwake-holm` | boundary_twin | BOOK (connection-economy; ECONOMY) | COST_SAVINGS or LOWEST_FARE | NONE | LOWEST_LOGICAL_AIRFARE (425-426, 438-445) |
 | `lupin-wold` | boundary_twin | BOOK (nonstop-economy; ECONOMY) | ALTERNATE_ROUTE_WITHIN_MARGIN or SAVINGS_BELOW_THRESHOLD | NONE | LOWEST_LOGICAL_AIRFARE (425-426, 438-445) |
 | `mallow-crag` | boundary_twin | BOOK (ua-flex; ECONOMY) | REFUNDABLE_WITHIN_MARGIN | NONE | LOWEST_LOGICAL_AIRFARE (425-426, 446) |
-| `nettle-brae` | boundary_twin | BOOK (ua-saver; ECONOMY) | LOWEST_FARE or REFUNDABLE_FARE_NOT_ALLOWED | NONE | LOWEST_LOGICAL_AIRFARE (425-426, 446) |
+| `nettle-brae` | boundary_twin | BOOK (ua-saver; ECONOMY) | REFUNDABLE_FARE_NOT_ALLOWED | NONE | LOWEST_LOGICAL_AIRFARE (425-426, 446) |
 | `osprey-dene` | multi_rule | BOOK (aa-economy; ECONOMY) | KEY_OFFICERS_TOGETHER or TRAVELLER_LIMIT_PER_FLIGHT | NONE | KEY_PERSONNEL (424-435, 490-494) |
 | `plover-ghyll` | multi_rule | BOOK (ua-economy; ECONOMY) | LOWEST_FARE | NONE | AIR_TRAVEL or CLASS_OF_SERVICE or KEY_PERSONNEL or LOWEST_LOGICAL_AIRFARE (424-435, 425-426, 490-494) |
 | `quince-firth` | multi_rule | BOOK (connection-economy; ECONOMY) | COST_SAVINGS or LOWEST_FARE | NONE | INTERNATIONAL_PRE_APPROVAL or LOWEST_LOGICAL_AIRFARE (288-290, 290-291, 438-445) |
 | `rowan-skerry` | multi_rule | BOOK (connection-economy; ECONOMY) | COST_SAVINGS or LOWEST_FARE | ELT_REPRESENTATIVE or NONE | INTERNATIONAL_PRE_APPROVAL or LOWEST_LOGICAL_AIRFARE (288-290, 424-435, 451-455) |
-| `sorrel-haugh` | multi_rule | BOOK (wn-economy; ECONOMY) | COMPANION_BUSINESS_PURPOSE_APPROVED or LOWEST_FARE | ELT_MEMBER or ELT_REPRESENTATIVE or NONE | MEETING_COMPANION or SPOUSE_COMPANION (356-361, 865-867) |
+| `sorrel-haugh` | multi_rule | BOOK (wn-economy; ECONOMY) | COMPANION_BUSINESS_PURPOSE_APPROVED or LOWEST_FARE | ELT_MEMBER or ELT_REPRESENTATIVE or NONE | LOWEST_LOGICAL_AIRFARE or MEETING_COMPANION or SPOUSE_COMPANION (356-361, 865-867) |
 | `thistle-moraine` | hidden_clause | BOOK (as-economy; ECONOMY) | LONG_FLIGHT_CONDITION_NOT_MET or UPGRADE_NOT_ELIGIBLE | NONE | CLASS_OF_SERVICE (424-435) |
 | `umber-carse` | hidden_clause | BOOK (lgw-ba-business; BUSINESS) | ALTERNATE_AIRPORT_LOWER_FARE or COST_SAVINGS or SEGMENT_CLASS_ENTITLEMENT or SENIOR_ROLE_ENTITLEMENT | NONE or REGIONAL_PRESIDENT | CLASS_OF_SERVICE or INTERNATIONAL_PRE_APPROVAL or LOWEST_LOGICAL_AIRFARE (288-290, 424-435, 451-455, 456-459) |
 | `vetch-linn` | hidden_clause | BOOK (ua-economy; ECONOMY) | LOYALTY_PROGRAM_PREFERENCE or PREFERRED_CARRIER_REQUIRED | NONE | AIR_TRAVEL or FREQUENT_FLYER or LOWEST_LOGICAL_AIRFARE or PREFERRED_VENDORS (331-332, 400-401, 461-464) |
@@ -90,8 +90,8 @@ the cap: run `full` locally with a raised cap.
 | `aster-fold` | refusal | REFUSE (none; NONE) | COMPANION_NOT_COVERED or PERSONAL_TRAVEL_NOT_COVERED | NONE | MEETING_COMPANION or NON_REIMBURSABLE or SPOUSE_COMPANION (356-361, 363-365, 1281) |
 | `bittern-hythe` | refusal | REFUSE (none; NONE) | GAMBLING_TRIP_NOT_PERMITTED or OUTSIDE_POLICY_SCOPE | NONE | ADDITIONAL_GUIDELINES (343-345) |
 | `corrie-wynd` | refusal | REFUSE (none; NONE) | OUTSIDE_POLICY_SCOPE or PERSONAL_TRAVEL_NOT_COVERED | NONE | NON_REIMBURSABLE or PURPOSE or SCOPE (145-146, 1237, 1250-1251) |
-| `dunlin-esker` | flag | FLAG_FOR_APPROVAL (dl-business, dl-economy; BUSINESS or ECONOMY) | UNCLEAR_POLICY_TEXT | CORPORATE_CONTROLLER or GLOBAL_TRAVEL or NOT_NAMED or SUPERVISOR | CLASS_OF_SERVICE or RESPONSIBILITY (159-160, 424-435) |
-| `eider-rigg` | flag | FLAG_FOR_APPROVAL (ua-economy, ua-premium; ECONOMY or PREMIUM_ECONOMY) | UNCLEAR_POLICY_TEXT | CORPORATE_CONTROLLER or GLOBAL_TRAVEL or NOT_NAMED or SUPERVISOR | CLASS_OF_SERVICE or RESPONSIBILITY (159-160, 288-290, 424-435) |
+| `dunlin-esker` | flag | FLAG_FOR_APPROVAL (dl-business, dl-economy; BUSINESS or ECONOMY) | APPROVAL_REQUIRED or UNCLEAR_POLICY_TEXT | CORPORATE_CONTROLLER or GLOBAL_TRAVEL or NOT_NAMED or SUPERVISOR | CLASS_OF_SERVICE or RESPONSIBILITY (159-160, 424-435) |
+| `eider-rigg` | flag | FLAG_FOR_APPROVAL (ua-economy, ua-premium; ECONOMY or PREMIUM_ECONOMY) | APPROVAL_REQUIRED or UNCLEAR_POLICY_TEXT | CORPORATE_CONTROLLER or GLOBAL_TRAVEL or NOT_NAMED or SUPERVISOR | CLASS_OF_SERVICE or RESPONSIBILITY (159-160, 288-290, 424-435) |
 | `finch-holt` | flag | FLAG_FOR_APPROVAL (lh-economy; ECONOMY) | APPROVAL_REQUIRED or INTERCONTINENTAL_PRE_APPROVAL | ELT_REPRESENTATIVE or REGIONAL_PRESIDENT | INTERNATIONAL_PRE_APPROVAL (288-290, 424-435, 425-426) |
 | `gorse-haven` | flag | FLAG_FOR_APPROVAL (ua-economy; ECONOMY) | APPROVAL_REQUIRED or KEY_OFFICERS_TOGETHER or TRAVELLER_LIMIT_PER_FLIGHT | CEO | KEY_PERSONNEL (424-435, 490-494) |
 
@@ -114,9 +114,9 @@ Regional President's authorization of a trip between continents; the ELT member'
 that role and `NONE`; a hold awaiting a sign-off accepts only the awaited roles; bookings within a continent rely on
 no sign-off (line 290-291) and accept `NONE`. The supervisor's sign-off in `finch-holt` is what that case tests,
 so `SUPERVISOR` is not accepted there. Degenerate agents: one that always holds the right offer as unclear passes
-the 2 gap flags; one that always books the cheapest seat with `LOWEST_FARE` and approver `NONE` passes 12 (the
+the 2 gap flags; one that always books the cheapest seat with `LOWEST_FARE` and approver `NONE` passes 11 (the
 domestic and authorized bookings whose answer is the lowest fare: `cinder-fell`, `drumlin-sedge`, `egret-shale`,
-`fernwick-cove`, `kittiwake-holm`, `nettle-brae`, `plover-ghyll`, `quince-firth`, `rowan-skerry`, `sorrel-haugh`,
+`fernwick-cove`, `kittiwake-holm`, `plover-ghyll`, `quince-firth`, `rowan-skerry`, `sorrel-haugh`,
 `wren-scaur`, `zephyr-mire`).
 
 ## Tools

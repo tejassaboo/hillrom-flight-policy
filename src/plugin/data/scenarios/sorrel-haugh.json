@@ -9,7 +9,7 @@
   "twin_fact": "a business purpose and the ELT member's approval are or are not on file",
   "flag_twins": [],
   "ambiguity_note": "none",
-  "request": "Please book my wife Elena to Orlando on February 22 for the customer partners' event - she's hosting the partners' program, and Diane approved it last week.",
+  "request": "Please book my wife Elena to Orlando on February 22 for the customer partners' event that opens the next day - she's hosting the partners' program, and Diane approved it last week.",
   "trip": {
     "traveller_name": "Elena Novak",
     "traveller_title": "Spouse of Robert Novak",
@@ -118,6 +118,7 @@
       "NONE"
     ],
     "clauses": [
+      "LOWEST_LOGICAL_AIRFARE",
       "MEETING_COMPANION",
       "SPOUSE_COMPANION"
     ],

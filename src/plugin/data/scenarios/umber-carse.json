@@ -8,7 +8,7 @@
   "twin_fact": "",
   "flag_twins": [],
   "ambiguity_note": "none",
-  "request": "I need to be in London on January 19 for the NHS Supply Chain negotiation - business class one way, please. Henrik approved the trip.",
+  "request": "I fly to London on January 19 for the NHS Supply Chain negotiation on January 21 - business class one way, please. Henrik approved the trip.",
   "trip": {
     "traveller_name": "Laura Pierce",
     "traveller_title": "Vice President, International Sales",
@@ -42,7 +42,9 @@
       }
     ],
     "colleagues": [],
-    "notes": []
+    "notes": [
+      "Central London is served by London Gatwick (LGW) as well as London Heathrow (LHR)."
+    ]
   },
   "world": {
     "searches": [
@@ -193,5 +195,5 @@
     }
   ],
   "distractors": [],
-  "design_notes": "A Vice President over six hours: business (433). Alternate airports are considered, Gatwick for Heathrow by name (456-459): Gatwick business saves 132000 cents (at least $1,000) and adds 5 minutes, so every reading books it."
+  "design_notes": "A Vice President over six hours: business (433). Alternate airports are considered, Gatwick for Heathrow by name (456-459), and the trip record names Gatwick as serving central London: Gatwick business saves 132000 cents (at least $1,000) and adds 5 minutes, so every reading books it."
 }

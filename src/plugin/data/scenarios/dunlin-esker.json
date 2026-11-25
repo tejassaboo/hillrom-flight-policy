@@ -110,6 +110,7 @@
       "ECONOMY"
     ],
     "reason_codes": [
+      "APPROVAL_REQUIRED",
       "UNCLEAR_POLICY_TEXT"
     ],
     "approvers": [
