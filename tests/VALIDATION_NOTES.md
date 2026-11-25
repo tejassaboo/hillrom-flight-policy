@@ -50,3 +50,13 @@ table gaps is stable.
 
 Verdict: **pass after fix.** At 81% with the two grader fixes it is 28/32 = 87.5%, all easy cases are valid, and the
 4 slips are on flags, a multi-rule case and the hidden clause.
+
+## Follow-up from the cross-plugin review (second commit)
+
+**Connection that passes the routing tests, the other code (kittiwake-holm, quince-firth, rowan-skerry):** all
+three requests ask for the nonstop "if policy allows", so the booking declines it. In the same wave Carter's
+jade-pennant booked the right connection with `ALTERNATE_ROUTE_TOO_EXPENSIVE` ("the alternate route (nonstop) is too
+expensive"), the code FedEx, Dollar General and Standex key on this branch. It is now accepted here too (both
+`rules.py` copies, `CONNECTION` in `tests/build_scenarios.py`, README, regenerated JSON). The always-cheapest agent
+answers `LOWEST_FARE`, already accepted: still 11/32. No re-run needed for this change. All six checks pass
+(pytest 268 passed).

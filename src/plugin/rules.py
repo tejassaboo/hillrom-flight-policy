@@ -518,7 +518,10 @@ def routing(trip, pool, between):
     if saving >= threshold:
         # ALTERNATE_ROUTE_WITHIN_MARGIN read as "the alternate (connecting) route is within the tests" is defensible
         # (w2 validation, rowan-skerry); the twin's nonstop is still told apart by the offer.
-        return ([connection], [ReasonCode.COST_SAVINGS, ReasonCode.LOWEST_FARE, ReasonCode.ALTERNATE_ROUTE_WITHIN_MARGIN],
+        # ALTERNATE_ROUTE_TOO_EXPENSIVE names why the asked-for nonstop is declined (w2 cross-plugin review: Carter's
+        # jade-pennant gave it on the same branch).
+        return ([connection], [ReasonCode.COST_SAVINGS, ReasonCode.LOWEST_FARE, ReasonCode.ALTERNATE_ROUTE_WITHIN_MARGIN,
+                               ReasonCode.ALTERNATE_ROUTE_TOO_EXPENSIVE],
                 [Clause.LOWEST_LOGICAL_AIRFARE],
                 f"Lines {lines}: the connection is the lowest logical airfare ({numbers}).")
     return ([nonstop], [ReasonCode.SAVINGS_BELOW_THRESHOLD, ReasonCode.ALTERNATE_ROUTE_WITHIN_MARGIN],
