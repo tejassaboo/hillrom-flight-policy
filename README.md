@@ -1,5 +1,7 @@
 # Hill-Rom Global Travel Flight Policy
 
+**Source of the handbook:** https://www.hillrom.com/content/dam/hillrom-aem/us/en/marketing/about/resources/supplier-requirements/Hillrom_Travel_Expense_Policy.pdf. The agent reads it verbatim (bundled at `src/plugin/data/policy.txt`); flights, fares and trips are synthetic.
+
 **No affiliation with Hill-Rom (Hillrom).** The handbook is Hill-Rom Holdings' public *Global Travel, Meeting &
 Expense Policy* (Corporate Policy 1016, effective June 1, 2021), bundled verbatim for research. It is a corporate
 handbook: do not publish this plugin before the course staff confirm that a verbatim corporate handbook may be
