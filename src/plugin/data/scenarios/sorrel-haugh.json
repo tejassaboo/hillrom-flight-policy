@@ -1,0 +1,148 @@
+{
+  "id": "sorrel-haugh",
+  "category": "multi_rule",
+  "overlays": [
+    "multi_traveller",
+    "outside_air_section"
+  ],
+  "twin_of": "aster-fold",
+  "twin_fact": "a business purpose and the ELT member's approval are or are not on file",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Please book my wife Elena to Orlando on February 22 for the customer partners' event - she's hosting the partners' program, and Diane approved it last week.",
+  "trip": {
+    "traveller_name": "Elena Novak",
+    "traveller_title": "Spouse of Robert Novak",
+    "elt_member": false,
+    "passenger": "SPOUSE_OR_COMPANION",
+    "accompanies": "Robert Novak, Vice President, Sales North America",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Diane Kessler, Senior Vice President, Global Operations",
+    "origin": "ORD",
+    "destination": "MCO",
+    "travel_date": "2027-02-22",
+    "return_date": "",
+    "booking_date": "2026-12-03",
+    "purpose": "Hosting the partners' program at the customer partners' event in Orlando",
+    "purpose_kind": "CUSTOMER_EVENT",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "Hosts the program for customers' partners at the Company's partners' event",
+    "approvals": [
+      {
+        "approver_name": "Diane Kessler",
+        "approver_title": "Senior Vice President, Global Operations",
+        "subject": "COMPANION_TICKET",
+        "in_writing": true,
+        "given_on": "2026-11-26"
+      }
+    ],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "MCO",
+        "date": "2027-02-22",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ua": {
+            "carrier": "UA",
+            "depart": "07:45",
+            "minutes": [
+              165
+            ]
+          },
+          "wn": {
+            "carrier": "WN",
+            "depart": "10:20",
+            "minutes": [
+              170
+            ]
+          },
+          "aa": {
+            "carrier": "AA",
+            "depart": "13:05",
+            "minutes": [
+              165
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 23800
+          },
+          {
+            "slot": "wn-economy",
+            "flight": "wn",
+            "cabin": "ECONOMY",
+            "fare_cents": 21900
+          },
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 24400
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "wn-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "COMPANION_BUSINESS_PURPOSE_APPROVED",
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "ELT_MEMBER",
+      "ELT_REPRESENTATIVE",
+      "NONE"
+    ],
+    "clauses": [
+      "MEETING_COMPANION",
+      "SPOUSE_COMPANION"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        356,
+        361
+      ],
+      "sha256": "a80ebeb6516aeb5743c0f4b7a7aeef10fd1195c5df3b8e411e3b41de3a6d3a7b",
+      "quote": "The Company does not permit spouse/companion travel and will not reimburse travel and event expenses incurred by a spouse or other individual accompanying an employee on business unless: • There is a bona fide business purpose for taking the spouse or other individual. • The reimbursable spouse/companion travel is approved in advance by your ELT member with the business purpose clearly stated. Such approval should be documented in writing (e.g. email) and submitted as part of the employee's expense report.",
+      "why": "companion travel only with a business purpose approved in advance by the ELT member"
+    },
+    {
+      "lines": [
+        865,
+        867
+      ],
+      "sha256": "3c853dfd8672e53464cbe33831c988afec12e21e8e5ef4e972e47b75066583fd",
+      "quote": "The Company does not permit spouse/companion travel to Company-sponsored meetings and will not reimburse travel and event expenses incurred by a spouse or other individual accompanying an employee on business unless -approved in advance by your ELT member. See also Section 2.10 of",
+      "why": "companion travel to Company meetings"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "A bona fide business purpose and the ELT member's advance written approval (356-361, 865-871): the companion's ticket at the lowest fare."
+}

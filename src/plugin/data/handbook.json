@@ -1,0 +1,16 @@
+{
+  "id": "hillrom-flight-policy",
+  "name": "Hill-Rom Global Travel Flight Policy",
+  "slug": "hillrom",
+  "title": "Hill-Rom Holdings Global Travel, Meeting & Expense Policy (Corporate Policy 1016), effective June 1, 2021",
+  "frozen_file": "hillrom_policy.txt",
+  "sha256": "ce8a85825ea9927ba36d66bc1006bed6bf9b771059ce7b7b7f0239e9c4a20b05",
+  "raw_pdf_sha256": "72418ac106ba47bd22300733184ea6507f67f7fc25351a9efd24a55ae9b396ca",
+  "words": 12518,
+  "lines": 1288,
+  "source": "https://www.hillrom.com/content/dam/hillrom-aem/us/en/marketing/about/resources/supplier-requirements/Hillrom_Travel_Expense_Policy.pdf",
+  "frozen_on": "2026-11-24",
+  "scenario_count": 32,
+  "currency": "USD",
+  "background_offers": 0
+}

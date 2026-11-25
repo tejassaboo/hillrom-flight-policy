@@ -1,0 +1,132 @@
+{
+  "id": "fernwick-cove",
+  "category": "easy",
+  "overlays": [],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Book me economy London to Frankfurt on December 7 for the EMEA service meeting, please.",
+  "trip": {
+    "traveller_name": "Oliver Grant",
+    "traveller_title": "Service Sales Manager, UK",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "GB",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Sophie Lang, Director, EMEA Service",
+    "origin": "LHR",
+    "destination": "FRA",
+    "travel_date": "2026-12-07",
+    "return_date": "",
+    "booking_date": "2026-11-30",
+    "purpose": "EMEA service meeting in Frankfurt",
+    "purpose_kind": "INTERNAL_MEETING",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "LHR",
+        "destination": "FRA",
+        "date": "2026-12-07",
+        "return_date": "",
+        "background": 2,
+        "flights": {
+          "ba": {
+            "carrier": "BA",
+            "depart": "07:20",
+            "minutes": [
+              95
+            ]
+          },
+          "lh": {
+            "carrier": "LH",
+            "depart": "10:05",
+            "minutes": [
+              100
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 18800
+          },
+          {
+            "slot": "lh-economy",
+            "flight": "lh",
+            "cabin": "ECONOMY",
+            "fare_cents": 17600
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "lh-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "CLASS_OF_SERVICE",
+      "INTERNATIONAL_PRE_APPROVAL",
+      "LOWEST_LOGICAL_AIRFARE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    },
+    {
+      "lines": [
+        425,
+        426
+      ],
+      "sha256": "b021467695bac99153170b420ae3b082058086b81f0fc7cd92bb8b5fdcf8b922",
+      "quote": "Employees are to use the lowest logical airfare as defined in Section 3.2.",
+      "why": "the lowest logical airfare"
+    },
+    {
+      "lines": [
+        290,
+        291
+      ],
+      "sha256": "a953de4bee4cea9e37791c8281d817cd685b3f628562b0bb4152a34b09e8ca5a",
+      "quote": "Pre-travel authorization is not required for travel within the same continent",
+      "why": "no authorization within a continent"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "London to Frankfurt is within one continent, so no pre-travel authorization (290-291); coach, lowest fare."
+}

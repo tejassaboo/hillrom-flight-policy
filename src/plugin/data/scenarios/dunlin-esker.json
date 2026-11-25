@@ -1,0 +1,149 @@
+{
+  "id": "dunlin-esker",
+  "category": "flag",
+  "overlays": [
+    "unclear_phrase"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [
+    "gannet-sill",
+    "heather-knap"
+  ],
+  "ambiguity_note": {
+    "phrase": "< 6 hours > 6 hours",
+    "readings": [
+      "Six hours is not more than six hours, so the segment is not '> 6 hours': coach.",
+      "Six hours is not less than six hours, so the segment is not '< 6 hours': business."
+    ]
+  },
+  "request": "I'm flying to Seattle on December 14 for the Providence health system review. Business class, please.",
+  "trip": {
+    "traveller_name": "Thomas Reyes",
+    "traveller_title": "Vice President, Global Marketing",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Diane Kessler, Senior Vice President, Global Operations",
+    "origin": "JFK",
+    "destination": "SEA",
+    "travel_date": "2026-12-14",
+    "return_date": "",
+    "booking_date": "2026-12-01",
+    "purpose": "Health system review in Seattle",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "BUSINESS",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "JFK",
+        "destination": "SEA",
+        "date": "2026-12-14",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "dl": {
+            "carrier": "DL",
+            "depart": "08:10",
+            "minutes": [
+              360
+            ]
+          },
+          "aa": {
+            "carrier": "AA",
+            "depart": "14:05",
+            "minutes": [
+              360
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "dl-economy",
+            "flight": "dl",
+            "cabin": "ECONOMY",
+            "fare_cents": 42000
+          },
+          {
+            "slot": "dl-business",
+            "flight": "dl",
+            "cabin": "BUSINESS",
+            "fare_cents": 128000
+          },
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 44500
+          },
+          {
+            "slot": "aa-business",
+            "flight": "aa",
+            "cabin": "BUSINESS",
+            "fare_cents": 131000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "dl-business",
+      "dl-economy"
+    ],
+    "cabins": [
+      "BUSINESS",
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "UNCLEAR_POLICY_TEXT"
+    ],
+    "approvers": [
+      "CORPORATE_CONTROLLER",
+      "GLOBAL_TRAVEL",
+      "NOT_NAMED",
+      "SUPERVISOR"
+    ],
+    "clauses": [
+      "CLASS_OF_SERVICE",
+      "RESPONSIBILITY"
+    ],
+    "unclear_phrase": "< 6 hours > 6 hours"
+  },
+  "must_keep": [
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    },
+    {
+      "lines": [
+        159,
+        160
+      ],
+      "sha256": "4c8e97032a71232e51c54b15f4545c0fcb047d6e1c151a818727aa979f8e7011",
+      "quote": "Prior to travel, if a particular situation is not covered by policy, employees should contact their manager/supervisor or the Manager of Global Travel for direction.",
+      "why": "who directs a situation the policy does not cover"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "A Vice President on a nonstop of exactly 360 minutes: the table's columns are '< 6 hours' (coach) and '> 6 hours and < 10 hours' (business); exactly six hours is in neither. A situation the policy does not cover goes to the manager/supervisor or the Manager of Global Travel (159-160)."
+}

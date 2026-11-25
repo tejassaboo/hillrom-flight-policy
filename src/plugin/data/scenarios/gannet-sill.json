@@ -1,0 +1,124 @@
+{
+  "id": "gannet-sill",
+  "category": "boundary_twin",
+  "overlays": [],
+  "twin_of": "heather-knap",
+  "twin_fact": "nonstop scheduled minutes 359 or 361",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm flying to Seattle on December 14 for the Providence health system review. Business class, please.",
+  "trip": {
+    "traveller_name": "Thomas Reyes",
+    "traveller_title": "Vice President, Global Marketing",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Diane Kessler, Senior Vice President, Global Operations",
+    "origin": "JFK",
+    "destination": "SEA",
+    "travel_date": "2026-12-14",
+    "return_date": "",
+    "booking_date": "2026-12-01",
+    "purpose": "Health system review in Seattle",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "BUSINESS",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "JFK",
+        "destination": "SEA",
+        "date": "2026-12-14",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "dl": {
+            "carrier": "DL",
+            "depart": "08:10",
+            "minutes": [
+              359
+            ]
+          },
+          "aa": {
+            "carrier": "AA",
+            "depart": "14:05",
+            "minutes": [
+              359
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "dl-economy",
+            "flight": "dl",
+            "cabin": "ECONOMY",
+            "fare_cents": 42000
+          },
+          {
+            "slot": "dl-business",
+            "flight": "dl",
+            "cabin": "BUSINESS",
+            "fare_cents": 128000
+          },
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 44500
+          },
+          {
+            "slot": "aa-business",
+            "flight": "aa",
+            "cabin": "BUSINESS",
+            "fare_cents": 131000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "dl-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LONG_FLIGHT_CONDITION_NOT_MET",
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "CLASS_OF_SERVICE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "A Vice President on a 359-minute nonstop: '< 6 hours', Coach / Economy (433)."
+}

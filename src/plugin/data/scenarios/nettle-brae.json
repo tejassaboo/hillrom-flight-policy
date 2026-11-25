@@ -1,0 +1,128 @@
+{
+  "id": "nettle-brae",
+  "category": "boundary_twin",
+  "overlays": [],
+  "twin_of": "mallow-crag",
+  "twin_fact": "refundable fare 14900 or 15000 cents above the non-refundable one",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Denver on December 9 for the UCHealth demo - the date may still move, so a refundable economy fare please.",
+  "trip": {
+    "traveller_name": "Ben Alvarez",
+    "traveller_title": "Clinical Sales Specialist",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Paul Grady, Area Director",
+    "origin": "ORD",
+    "destination": "DEN",
+    "travel_date": "2026-12-09",
+    "return_date": "",
+    "booking_date": "2026-11-30",
+    "purpose": "Product demonstration at a hospital customer in Denver",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": true,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "DEN",
+        "date": "2026-12-09",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ua": {
+            "carrier": "UA",
+            "depart": "08:20",
+            "minutes": [
+              165
+            ]
+          },
+          "aa": {
+            "carrier": "AA",
+            "depart": "11:45",
+            "minutes": [
+              170
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ua-saver",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 27400
+          },
+          {
+            "slot": "ua-flex",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 42400,
+            "refundable": true
+          },
+          {
+            "slot": "aa-saver",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 29900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "ua-saver"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "REFUNDABLE_FARE_NOT_ALLOWED"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "LOWEST_LOGICAL_AIRFARE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        446,
+        446
+      ],
+      "sha256": "61af42b33b02b43ea23757817b3fcc4d8c9825f4eecd36c1de1cd7c3030bc56e",
+      "quote": "Non-refundable fares may be declined if the cost differential is less than $150.",
+      "why": "the refundable margin"
+    },
+    {
+      "lines": [
+        425,
+        426
+      ],
+      "sha256": "b021467695bac99153170b420ae3b082058086b81f0fc7cd92bb8b5fdcf8b922",
+      "quote": "Employees are to use the lowest logical airfare as defined in Section 3.2.",
+      "why": "the lowest logical airfare"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The refundable fare costs 15000 cents more than the non-refundable one on the same flight: not less than $150, so the non-refundable fare."
+}

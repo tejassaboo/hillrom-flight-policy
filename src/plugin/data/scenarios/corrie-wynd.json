@@ -1,0 +1,133 @@
+{
+  "id": "corrie-wynd",
+  "category": "refusal",
+  "overlays": [
+    "personal_travel",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Can you book my flight to Orlando on December 23 for our family Christmas trip? I'll sort out paying it back on my expense report.",
+  "trip": {
+    "traveller_name": "Hannah Brooks",
+    "traveller_title": "Product Manager",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Victor Hayes, Senior Vice President, Strategy",
+    "origin": "ORD",
+    "destination": "MCO",
+    "travel_date": "2026-12-23",
+    "return_date": "",
+    "booking_date": "2026-12-02",
+    "purpose": "Family Christmas vacation in Orlando",
+    "purpose_kind": "PERSONAL",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "MCO",
+        "date": "2026-12-23",
+        "return_date": "",
+        "background": 2,
+        "flights": {
+          "ua": {
+            "carrier": "UA",
+            "depart": "08:10",
+            "minutes": [
+              165
+            ]
+          },
+          "wn": {
+            "carrier": "WN",
+            "depart": "12:30",
+            "minutes": [
+              170
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 31800
+          },
+          {
+            "slot": "wn-economy",
+            "flight": "wn",
+            "cabin": "ECONOMY",
+            "fare_cents": 28900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "OUTSIDE_POLICY_SCOPE",
+      "PERSONAL_TRAVEL_NOT_COVERED"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "NON_REIMBURSABLE",
+      "PURPOSE",
+      "SCOPE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        145,
+        146
+      ],
+      "sha256": "edb087c2019f6cedd1fb9e301a79c70cde2dc3ee3e9b408c152754bac021a67f",
+      "quote": "It governs expenses incurred during Company travel",
+      "why": "the policy covers Company travel"
+    },
+    {
+      "lines": [
+        1237,
+        1237
+      ],
+      "sha256": "0411e8008d2ab693eb50179d83fe3cacf572a2337c6d6667953b1e1f8380eb8a",
+      "quote": "Any expense not directly related to business travel, meeting and event expenses are not permitted.",
+      "why": "nothing not related to business travel"
+    },
+    {
+      "lines": [
+        1250,
+        1251
+      ],
+      "sha256": "cb6e842610233c6745bdb7581a01bcf8af9bc2326144c0a3f23d2c4cb7acc121",
+      "quote": "• Expenses related to vacation or personal days, or personal time or activities, prior, during or after a business trip",
+      "why": "no vacation or personal days"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The policy governs Company travel (145-146); any expense not directly related to business travel is not permitted and vacation days are personal (1237, 1250-1251): the Company buys no ticket."
+}

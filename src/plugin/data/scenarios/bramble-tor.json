@@ -1,0 +1,126 @@
+{
+  "id": "bramble-tor",
+  "category": "easy",
+  "overlays": [
+    "dearer_option"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Please book me business class to San Francisco on December 11 for the West region leadership offsite.",
+  "trip": {
+    "traveller_name": "Gloria Benton",
+    "traveller_title": "Senior Vice President, Human Resources",
+    "elt_member": true,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Marcus Hale, President and CEO",
+    "origin": "ORD",
+    "destination": "SFO",
+    "travel_date": "2026-12-11",
+    "return_date": "",
+    "booking_date": "2026-11-30",
+    "purpose": "West region leadership offsite",
+    "purpose_kind": "INTERNAL_MEETING",
+    "requested_cabin": "BUSINESS",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "SFO",
+        "date": "2026-12-11",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ua": {
+            "carrier": "UA",
+            "depart": "08:00",
+            "minutes": [
+              270
+            ]
+          },
+          "aa": {
+            "carrier": "AA",
+            "depart": "10:30",
+            "minutes": [
+              275
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 29800
+          },
+          {
+            "slot": "ua-business",
+            "flight": "ua",
+            "cabin": "BUSINESS",
+            "fare_cents": 91000
+          },
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 31200
+          },
+          {
+            "slot": "aa-business",
+            "flight": "aa",
+            "cabin": "BUSINESS",
+            "fare_cents": 88500
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "aa-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "SEGMENT_CLASS_ENTITLEMENT",
+      "SENIOR_ROLE_ENTITLEMENT"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "CLASS_OF_SERVICE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "An ELT member flies Standard Business in every column (432), even on a 270-275 minute segment; the cheaper business fare."
+}

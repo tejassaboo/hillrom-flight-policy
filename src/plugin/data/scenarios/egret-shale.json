@@ -1,0 +1,156 @@
+{
+  "id": "egret-shale",
+  "category": "easy",
+  "overlays": [
+    "upgrade_not_taken",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm going to London for the NHS tender meeting on December 15. Economy is fine for me; Henrik signed off.",
+  "trip": {
+    "traveller_name": "Laura Pierce",
+    "traveller_title": "Vice President, International Sales",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Henrik Aalto, Regional President, Europe",
+    "origin": "JFK",
+    "destination": "LHR",
+    "travel_date": "2026-12-15",
+    "return_date": "",
+    "booking_date": "2026-12-01",
+    "purpose": "NHS tender meeting in London",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [
+      {
+        "approver_name": "Henrik Aalto",
+        "approver_title": "Regional President, Europe",
+        "subject": "TRIP",
+        "in_writing": true,
+        "given_on": "2026-11-30"
+      }
+    ],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "JFK",
+        "destination": "LHR",
+        "date": "2026-12-15",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ba": {
+            "carrier": "BA",
+            "depart": "18:30",
+            "minutes": [
+              420
+            ]
+          },
+          "aa": {
+            "carrier": "AA",
+            "depart": "21:10",
+            "minutes": [
+              415
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ba-economy",
+            "flight": "ba",
+            "cabin": "ECONOMY",
+            "fare_cents": 68000
+          },
+          {
+            "slot": "ba-business",
+            "flight": "ba",
+            "cabin": "BUSINESS",
+            "fare_cents": 412000
+          },
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 64500
+          },
+          {
+            "slot": "aa-business",
+            "flight": "aa",
+            "cabin": "BUSINESS",
+            "fare_cents": 398000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "aa-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE",
+      "REGIONAL_PRESIDENT"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "CLASS_OF_SERVICE",
+      "INTERNATIONAL_PRE_APPROVAL",
+      "LOWEST_LOGICAL_AIRFARE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    },
+    {
+      "lines": [
+        425,
+        426
+      ],
+      "sha256": "b021467695bac99153170b420ae3b082058086b81f0fc7cd92bb8b5fdcf8b922",
+      "quote": "Employees are to use the lowest logical airfare as defined in Section 3.2.",
+      "why": "the lowest logical airfare"
+    },
+    {
+      "lines": [
+        288,
+        290
+      ],
+      "sha256": "54d998313e13d0e4e42659fbb824713f0514e79036ecfa7c8e7f4c3c9a93f66b",
+      "quote": "International travel (travel between continents) requires pre-travel authorization from the employee's ELT representative or Regional President. Such approval should be documented in writing",
+      "why": "authorization for travel between continents"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "A Vice President on 415-420 minute segments may fly business (433), but asks for economy: a permission, not an obligation; the lowest fare. The Regional President's authorization is on file (288)."
+}

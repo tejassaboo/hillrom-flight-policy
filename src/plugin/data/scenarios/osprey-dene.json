@@ -1,0 +1,165 @@
+{
+  "id": "osprey-dene",
+  "category": "multi_rule",
+  "overlays": [
+    "multi_traveller",
+    "dearer_option",
+    "upgrade_not_taken"
+  ],
+  "twin_of": "plover-ghyll",
+  "twin_fact": "the Chief Legal Officer is or is not on the earlier flight",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Book me to LaGuardia on December 9 for the board meeting. Economy is fine - the earlier flight the rest of the leadership team is on would be ideal.",
+  "trip": {
+    "traveller_name": "Alan Brooks",
+    "traveller_title": "Chief Financial Officer",
+    "elt_member": true,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Marcus Hale, President and CEO",
+    "origin": "ORD",
+    "destination": "LGA",
+    "travel_date": "2026-12-09",
+    "return_date": "",
+    "booking_date": "2026-12-01",
+    "purpose": "Quarterly board meeting in New York",
+    "purpose_kind": "BOARD_MEETING",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [
+      {
+        "name": "Marcus Hale",
+        "title": "President and CEO",
+        "elt_member": true,
+        "flights": [
+          "UA 375"
+        ]
+      },
+      {
+        "name": "Joan Whitaker",
+        "title": "SVP Corporate Secretary & Chief Legal Officer",
+        "elt_member": true,
+        "flights": [
+          "UA 375"
+        ]
+      }
+    ],
+    "notes": [
+      "The CEO and the Chief Legal Officer are booked on UA 375."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "LGA",
+        "date": "2026-12-09",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ua": {
+            "carrier": "UA",
+            "depart": "07:00",
+            "minutes": [
+              125
+            ]
+          },
+          "aa": {
+            "carrier": "AA",
+            "depart": "08:30",
+            "minutes": [
+              130
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 21800
+          },
+          {
+            "slot": "ua-business",
+            "flight": "ua",
+            "cabin": "BUSINESS",
+            "fare_cents": 64000
+          },
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 24600
+          },
+          {
+            "slot": "aa-business",
+            "flight": "aa",
+            "cabin": "BUSINESS",
+            "fare_cents": 66000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "aa-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "KEY_OFFICERS_TOGETHER",
+      "TRAVELLER_LIMIT_PER_FLIGHT"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "KEY_PERSONNEL"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        490,
+        494
+      ],
+      "sha256": "00f5ce59c78e15a6dea696190ed0e21f5661e6901280c8929b4890f776baa90c",
+      "quote": "Any exceptions to the following will require the advanced approval of the Company's President & Chief Executive Officer (CEO): • No more than 4 ELT members may travel together. • No more than 2 of the following may travel together: President and CEO, Chief Financial Officer, SVP Corporate Secretary & Chief Legal Officer.",
+      "why": "who may travel together, and the CEO's approval for exceptions"
+    },
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        487,
+        488
+      ],
+      "quote": "it is recommended to avoid planning or creating travel plans that place large employee groups together in a single aircraft",
+      "why": "a recommendation; the limits count ELT members and officers only"
+    }
+  ],
+  "design_notes": "The CEO and the Chief Legal Officer are on UA 375; the CFO would make three of the named officers on one flight (493-494), so the other flight. The ELT may fly business (432) but she asks for economy."
+}

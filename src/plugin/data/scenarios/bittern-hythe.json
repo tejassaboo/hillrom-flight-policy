@@ -1,0 +1,112 @@
+{
+  "id": "bittern-hythe",
+  "category": "refusal",
+  "overlays": [
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Book me to Las Vegas on January 15. We're taking the Midwest Health purchasing team for a weekend at the casinos to say thanks for the renewal.",
+  "trip": {
+    "traveller_name": "Derek Coleman",
+    "traveller_title": "Key Account Director",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Paul Grady, Area Director",
+    "origin": "ORD",
+    "destination": "LAS",
+    "travel_date": "2027-01-15",
+    "return_date": "",
+    "booking_date": "2026-12-02",
+    "purpose": "A casino weekend with a customer's purchasing team",
+    "purpose_kind": "ENTERTAINMENT",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "LAS",
+        "date": "2027-01-15",
+        "return_date": "",
+        "background": 2,
+        "flights": {
+          "ua": {
+            "carrier": "UA",
+            "depart": "09:00",
+            "minutes": [
+              230
+            ]
+          },
+          "wn": {
+            "carrier": "WN",
+            "depart": "11:40",
+            "minutes": [
+              235
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 26300
+          },
+          {
+            "slot": "wn-economy",
+            "flight": "wn",
+            "cabin": "ECONOMY",
+            "fare_cents": 24800
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "GAMBLING_TRIP_NOT_PERMITTED",
+      "OUTSIDE_POLICY_SCOPE"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "ADDITIONAL_GUIDELINES"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        343,
+        345
+      ],
+      "sha256": "1fc7eef52c53093ecc9f56fbcc2ccd4b5b3659f838d6cf3695d399fadcc967cd",
+      "quote": "• Gambling Trips - The Company policy is that we will not take employees or customers gambling. Gambling trips are not to be planned as part of either customer visits or internal business meetings.",
+      "why": "no gambling trips"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Lines 343-345: the Company will not take employees or customers gambling, and gambling trips are not to be planned as part of customer visits: no ticket."
+}

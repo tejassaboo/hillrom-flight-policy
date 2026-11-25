@@ -1,0 +1,143 @@
+{
+  "id": "yew-strand",
+  "category": "distractor",
+  "overlays": [
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Anchorage on December 15 for the Providence Alaska go-live. It's nearly seven hours and I need to work online the whole way - in-flight wifi is reimbursable on flights that long - so please book business.",
+  "trip": {
+    "traveller_name": "Priya Nair",
+    "traveller_title": "Director, Clinical Informatics",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Thomas Reyes, Vice President, Global Marketing",
+    "origin": "JFK",
+    "destination": "ANC",
+    "travel_date": "2026-12-15",
+    "return_date": "",
+    "booking_date": "2026-12-01",
+    "purpose": "Software go-live at a hospital in Anchorage",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "BUSINESS",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "JFK",
+        "destination": "ANC",
+        "date": "2026-12-15",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "dl": {
+            "carrier": "DL",
+            "depart": "08:45",
+            "minutes": [
+              415
+            ]
+          },
+          "as": {
+            "carrier": "AS",
+            "depart": "16:30",
+            "minutes": [
+              420
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "dl-economy",
+            "flight": "dl",
+            "cabin": "ECONOMY",
+            "fare_cents": 51800
+          },
+          {
+            "slot": "dl-business",
+            "flight": "dl",
+            "cabin": "BUSINESS",
+            "fare_cents": 142000
+          },
+          {
+            "slot": "as-economy",
+            "flight": "as",
+            "cabin": "ECONOMY",
+            "fare_cents": 53900
+          },
+          {
+            "slot": "as-business",
+            "flight": "as",
+            "cabin": "BUSINESS",
+            "fare_cents": 139000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "dl-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "CLASS_OF_SERVICE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    },
+    {
+      "lines": [
+        449,
+        450
+      ],
+      "sha256": "8b6a9d14f4875d8705bc1ac95c175b107aa0e09eb6d9ba971c2b633b15f68524",
+      "quote": "Upgrades to Business or Premium Economy classes are not reimbursable unless no other seats are available in your permitted class of service at the time of booking.",
+      "why": "no upgrade"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        1216,
+        1217
+      ],
+      "quote": "Internet connections during flight may be reimbursed for flight segments greater than six (6) hours in duration.",
+      "why": "in-flight internet, not the cabin"
+    }
+  ],
+  "design_notes": "A Director on a 415-420 minute segment: Coach / Economy (434). Line 1216-1217 lets in-flight internet be reimbursed on segments over six hours, which has nothing to do with the cabin."
+}

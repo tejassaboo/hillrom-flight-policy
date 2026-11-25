@@ -1,0 +1,150 @@
+{
+  "id": "lupin-wold",
+  "category": "boundary_twin",
+  "overlays": [
+    "multi_leg",
+    "dearer_option"
+  ],
+  "twin_of": "kittiwake-holm",
+  "twin_fact": "connection round-trip fare 36800 or 36900 cents against 61800",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Round trip to Seattle, out December 8 and back December 11, for the Swedish Medical install. I'd like the nonstop both ways if policy allows; economy.",
+  "trip": {
+    "traveller_name": "Nina Patel",
+    "traveller_title": "Implementation Specialist",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Craig Lund, Director, Field Service",
+    "origin": "ORD",
+    "destination": "SEA",
+    "travel_date": "2026-12-08",
+    "return_date": "2026-12-11",
+    "booking_date": "2026-11-24",
+    "purpose": "Equipment installation at a Seattle hospital",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": true,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "round",
+        "origin": "ORD",
+        "destination": "SEA",
+        "date": "2026-12-08",
+        "return_date": "2026-12-11",
+        "background": 0,
+        "flights": {
+          "ua": {
+            "carrier": "UA",
+            "depart": "08:00",
+            "minutes": [
+              250
+            ],
+            "return": {
+              "depart": "16:00",
+              "minutes": [
+                225
+              ]
+            }
+          },
+          "dl": {
+            "carrier": "DL",
+            "depart": "07:15",
+            "minutes": [
+              70,
+              190
+            ],
+            "via": [
+              "MSP"
+            ],
+            "layovers": [
+              80
+            ],
+            "return": {
+              "depart": "15:10",
+              "minutes": [
+                180,
+                75
+              ],
+              "via": [
+                "MSP"
+              ],
+              "layovers": [
+                60
+              ]
+            }
+          }
+        },
+        "offers": [
+          {
+            "slot": "nonstop-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 61800
+          },
+          {
+            "slot": "connection-economy",
+            "flight": "dl",
+            "cabin": "ECONOMY",
+            "fare_cents": 36900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "nonstop-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "ALTERNATE_ROUTE_WITHIN_MARGIN",
+      "SAVINGS_BELOW_THRESHOLD"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "LOWEST_LOGICAL_AIRFARE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        438,
+        445
+      ],
+      "sha256": "74bb26a660a6bd2621cd273ab0ad644fbe3d19cabca2ab77a1ee090247c69d58",
+      "quote": "Travelers are expected to book the lowest logical airfare as determined by the travel agency for travel within a continent based on the following parameters: • Routing requires no more than one connection each way. • Routing does not increase the one-way total elapsed trip time (origin to destination) by more than two hours. • Time Window: Departure/arrival must be no more than two hours before or after requested time. • Savings must be at least $250 of the round-trip coach/economy fare to offset schedule inconvenience.",
+      "why": "the routing tests within a continent"
+    },
+    {
+      "lines": [
+        425,
+        426
+      ],
+      "sha256": "b021467695bac99153170b420ae3b082058086b81f0fc7cd92bb8b5fdcf8b922",
+      "quote": "Employees are to use the lowest logical airfare as defined in Section 3.2.",
+      "why": "the lowest logical airfare"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The one-stop round trip via Minneapolis adds 90 minutes each way (within two hours) and saves 24900 cents on the round-trip fare: less than $250, so the requested nonstop."
+}

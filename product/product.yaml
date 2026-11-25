@@ -1,0 +1,13 @@
+_ > nanoagent.plugin.v0001.ProductConfig:
+tagline: "One flight request, the company's real travel handbook: book it, refuse it, or hold it for sign-off"
+summary: "An agent handles one traveller's flight request under Hill-Rom Holdings' Global Travel, Meeting & Expense Policy (Corporate Policy 1016, June 2021), read verbatim. It reads the trip record, searches a simulated flight world (real airports and airlines, synthetic schedules and fares) and submits a decision with the offer, cabin, reason, approver and handbook section. A deterministic verifier rebuilds the offers and the handbook's answer itself and checks every field. Thirty-two cases cover the per-segment class table on both sides of each column, its gaps at exactly six and ten hours, routing savings and refundable margins to the cent, travel between continents, executives on one aircraft, companions, gambling and personal trips."
+highlights:
+  - "The verbatim handbook: no paraphrase, no rules restated in the task"
+  - "Exact boundaries: 359 against 361 and 599 against 601 scheduled minutes, $250 and $150 to the cent"
+  - "The table's gaps become holds for approval, each once, with clear twins on both sides"
+  - "Fully offline: a hash-seeded flight world with unguessable offer ids"
+steps:
+  - "Name a case, for example alder-bight, with the traveller's request"
+  - "The agent reads the trip record and searches flights on the trip's route and date"
+  - "It submits BOOK, REFUSE or FLAG_FOR_APPROVAL with the offer, cabin, reason, approver and section"
+  - "The verifier recomputes the handbook's answer and checks every field"

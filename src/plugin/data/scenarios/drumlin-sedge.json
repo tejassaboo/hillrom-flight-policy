@@ -1,0 +1,136 @@
+{
+  "id": "drumlin-sedge",
+  "category": "easy",
+  "overlays": [],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Economy to Dallas on December 8 for the Baylor Scott & White installation review, please.",
+  "trip": {
+    "traveller_name": "Dana Whitfield",
+    "traveller_title": "Field Service Manager",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Craig Lund, Director, Field Service",
+    "origin": "ORD",
+    "destination": "DFW",
+    "travel_date": "2026-12-08",
+    "return_date": "",
+    "booking_date": "2026-12-01",
+    "purpose": "Installation review at a hospital customer in Dallas",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "DFW",
+        "date": "2026-12-08",
+        "return_date": "",
+        "background": 2,
+        "flights": {
+          "aa-early": {
+            "carrier": "AA",
+            "depart": "06:30",
+            "minutes": [
+              150
+            ]
+          },
+          "ua": {
+            "carrier": "UA",
+            "depart": "09:15",
+            "minutes": [
+              155
+            ]
+          },
+          "aa-noon": {
+            "carrier": "AA",
+            "depart": "13:40",
+            "minutes": [
+              150
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "early-economy",
+            "flight": "aa-early",
+            "cabin": "ECONOMY",
+            "fare_cents": 17900,
+            "seats": false
+          },
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 19400
+          },
+          {
+            "slot": "noon-economy",
+            "flight": "aa-noon",
+            "cabin": "ECONOMY",
+            "fare_cents": 21900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "ua-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "CLASS_OF_SERVICE",
+      "LOWEST_LOGICAL_AIRFARE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    },
+    {
+      "lines": [
+        425,
+        426
+      ],
+      "sha256": "b021467695bac99153170b420ae3b082058086b81f0fc7cd92bb8b5fdcf8b922",
+      "quote": "Employees are to use the lowest logical airfare as defined in Section 3.2.",
+      "why": "the lowest logical airfare"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The cheapest listed fare is sold out, so the lowest fare that can be bought; coach (424-435)."
+}

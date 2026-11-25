@@ -1,0 +1,157 @@
+{
+  "id": "alder-bight",
+  "category": "easy",
+  "overlays": [],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm visiting the Emory hospital account in Atlanta on December 9. Economy, please - whatever fits policy.",
+  "trip": {
+    "traveller_name": "Rachel Owens",
+    "traveller_title": "Senior Account Manager",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Paul Grady, Area Director",
+    "origin": "ORD",
+    "destination": "ATL",
+    "travel_date": "2026-12-09",
+    "return_date": "",
+    "booking_date": "2026-11-30",
+    "purpose": "Account review at a hospital customer in Atlanta",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [
+      "United Airlines",
+      "American Airlines"
+    ],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "ATL",
+        "date": "2026-12-09",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "dl": {
+            "carrier": "DL",
+            "depart": "07:05",
+            "minutes": [
+              120
+            ]
+          },
+          "ua": {
+            "carrier": "UA",
+            "depart": "09:40",
+            "minutes": [
+              115
+            ]
+          },
+          "aa": {
+            "carrier": "AA",
+            "depart": "12:15",
+            "minutes": [
+              115
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "dl-economy",
+            "flight": "dl",
+            "cabin": "ECONOMY",
+            "fare_cents": 21400
+          },
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 21400
+          },
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 22800
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "ua-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "PREFERRED_CARRIER_REQUIRED"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "LOWEST_LOGICAL_AIRFARE",
+      "PREFERRED_VENDORS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    },
+    {
+      "lines": [
+        425,
+        426
+      ],
+      "sha256": "b021467695bac99153170b420ae3b082058086b81f0fc7cd92bb8b5fdcf8b922",
+      "quote": "Employees are to use the lowest logical airfare as defined in Section 3.2.",
+      "why": "the lowest logical airfare"
+    },
+    {
+      "lines": [
+        400,
+        401
+      ],
+      "sha256": "69552a584e57eb75ea62fca9b53c0e92e5fd398862c5bffb4cc48392ae8c3b73",
+      "quote": "Travelers will be required to utilize preferred vendors if the fare offered is equal to or less than that offered by a non-preferred vendor.",
+      "why": "preferred airline at an equal or lower fare"
+    },
+    {
+      "lines": [
+        290,
+        291
+      ],
+      "sha256": "a953de4bee4cea9e37791c8281d817cd685b3f628562b0bb4152a34b09e8ca5a",
+      "quote": "Pre-travel authorization is not required for travel within the same continent",
+      "why": "no authorization within a continent"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "A 115-120 minute segment: coach for all other employees (424-435). Delta and United tie at the lowest fare; the preferred airline is required at an equal fare (400-401). Within a continent no pre-travel authorization is needed (290-291), so no sign-off: NONE."
+}

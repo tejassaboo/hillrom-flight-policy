@@ -1,0 +1,169 @@
+{
+  "id": "rowan-skerry",
+  "category": "multi_rule",
+  "overlays": [
+    "multi_leg",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Round trip to Frankfurt, out January 18 and back January 22, for the European service review. Nonstop if policy allows; economy. Diane approved the trip.",
+  "trip": {
+    "traveller_name": "Sarah Lindqvist",
+    "traveller_title": "Director, Global Service Operations",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Diane Kessler, Senior Vice President, Global Operations",
+    "origin": "ORD",
+    "destination": "FRA",
+    "travel_date": "2027-01-18",
+    "return_date": "2027-01-22",
+    "booking_date": "2026-12-02",
+    "purpose": "European service review in Frankfurt",
+    "purpose_kind": "INTERNAL_MEETING",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": true,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [
+      {
+        "approver_name": "Diane Kessler",
+        "approver_title": "Senior Vice President, Global Operations",
+        "subject": "TRIP",
+        "in_writing": true,
+        "given_on": "2026-12-01"
+      }
+    ],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "round",
+        "origin": "ORD",
+        "destination": "FRA",
+        "date": "2027-01-18",
+        "return_date": "2027-01-22",
+        "background": 0,
+        "flights": {
+          "lh": {
+            "carrier": "LH",
+            "depart": "17:30",
+            "minutes": [
+              530
+            ],
+            "return": {
+              "depart": "11:00",
+              "minutes": [
+                590
+              ]
+            }
+          },
+          "ua": {
+            "carrier": "UA",
+            "depart": "15:20",
+            "minutes": [
+              125,
+              465
+            ],
+            "via": [
+              "EWR"
+            ],
+            "layovers": [
+              110
+            ],
+            "return": {
+              "depart": "08:40",
+              "minutes": [
+                515,
+                145
+              ],
+              "via": [
+                "EWR"
+              ],
+              "layovers": [
+                100
+              ]
+            }
+          }
+        },
+        "offers": [
+          {
+            "slot": "nonstop-economy",
+            "flight": "lh",
+            "cabin": "ECONOMY",
+            "fare_cents": 236000
+          },
+          {
+            "slot": "connection-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 132000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "connection-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "COST_SAVINGS",
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "ELT_REPRESENTATIVE",
+      "NONE"
+    ],
+    "clauses": [
+      "INTERNATIONAL_PRE_APPROVAL",
+      "LOWEST_LOGICAL_AIRFARE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        451,
+        455
+      ],
+      "sha256": "e0fe45a2171a28a4db1efecc06fba4aaf37749fa26e990f6c45e17b72226fffe",
+      "quote": "For travel between continents, travelers are expected to book the lowest logical airfare based on the following parameters: • Routing does not increase the one-way total elapsed trip time (origin to destination) by more than three (3) hours. • Savings must be at least $1,000 to offset schedule inconvenience.",
+      "why": "the routing tests between continents"
+    },
+    {
+      "lines": [
+        288,
+        290
+      ],
+      "sha256": "54d998313e13d0e4e42659fbb824713f0514e79036ecfa7c8e7f4c3c9a93f66b",
+      "quote": "International travel (travel between continents) requires pre-travel authorization from the employee's ELT representative or Regional President. Such approval should be documented in writing",
+      "why": "authorization for travel between continents"
+    },
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Between continents the tests are three hours and $1,000 (451-455): the connection via Newark adds 170 minutes each way and saves 104000 cents, so it is the lowest logical airfare. The within-continent two-hour test would wrongly keep the nonstop. Every segment is coach for a Director (125-590 minutes, none at 360 or 600)."
+}

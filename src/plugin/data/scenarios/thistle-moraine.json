@@ -1,0 +1,140 @@
+{
+  "id": "thistle-moraine",
+  "category": "hidden_clause",
+  "overlays": [
+    "multi_leg"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm headed to Anchorage on December 10 for the Alaska Native Medical Center visit. It's well over seven hours of flying through Seattle, so business class please.",
+  "trip": {
+    "traveller_name": "Thomas Reyes",
+    "traveller_title": "Vice President, Global Marketing",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Diane Kessler, Senior Vice President, Global Operations",
+    "origin": "ORD",
+    "destination": "ANC",
+    "travel_date": "2026-12-10",
+    "return_date": "",
+    "booking_date": "2026-12-01",
+    "purpose": "Customer visit at a medical center in Anchorage",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "BUSINESS",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "ANC",
+        "date": "2026-12-10",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "dl": {
+            "carrier": "DL",
+            "depart": "07:30",
+            "minutes": [
+              230,
+              195
+            ],
+            "via": [
+              "SEA"
+            ],
+            "layovers": [
+              70
+            ]
+          },
+          "as": {
+            "carrier": "AS",
+            "depart": "09:10",
+            "minutes": [
+              235,
+              200
+            ],
+            "via": [
+              "SEA"
+            ],
+            "layovers": [
+              85
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "dl-economy",
+            "flight": "dl",
+            "cabin": "ECONOMY",
+            "fare_cents": 46200
+          },
+          {
+            "slot": "dl-business",
+            "flight": "dl",
+            "cabin": "BUSINESS",
+            "fare_cents": 118000
+          },
+          {
+            "slot": "as-economy",
+            "flight": "as",
+            "cabin": "ECONOMY",
+            "fare_cents": 44900
+          },
+          {
+            "slot": "as-business",
+            "flight": "as",
+            "cabin": "BUSINESS",
+            "fare_cents": 112000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "as-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LONG_FLIGHT_CONDITION_NOT_MET",
+      "UPGRADE_NOT_ELIGIBLE"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "CLASS_OF_SERVICE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Class is by 'the length of individual flight segment' (426): every segment is under six hours (195-235 minutes), so a Vice President flies coach on each, although the flying time adds up to over seven hours."
+}

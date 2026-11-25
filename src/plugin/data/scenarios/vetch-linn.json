@@ -1,0 +1,150 @@
+{
+  "id": "vetch-linn",
+  "category": "hidden_clause",
+  "overlays": [
+    "synonym"
+  ],
+  "twin_of": "wren-scaur",
+  "twin_fact": "United's fare equal to American's or 100 cents above",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Boston on December 16 for the Mass General meeting. Put me on American - I'm close to Platinum, and it's the same price as United anyway. Economy.",
+  "trip": {
+    "traveller_name": "Megan Shaw",
+    "traveller_title": "Regional Sales Manager",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Paul Grady, Area Director",
+    "origin": "ORD",
+    "destination": "BOS",
+    "travel_date": "2026-12-16",
+    "return_date": "",
+    "booking_date": "2026-12-02",
+    "purpose": "Meeting at a hospital customer in Boston",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "American Airlines",
+    "requested_airline_why": "Close to the next elite status level",
+    "preferred_airlines": [
+      "United Airlines"
+    ],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "BOS",
+        "date": "2026-12-16",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "aa": {
+            "carrier": "AA",
+            "depart": "07:40",
+            "minutes": [
+              145
+            ]
+          },
+          "ua": {
+            "carrier": "UA",
+            "depart": "09:05",
+            "minutes": [
+              140
+            ]
+          },
+          "dl": {
+            "carrier": "DL",
+            "depart": "11:30",
+            "minutes": [
+              145
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 31400
+          },
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 31400
+          },
+          {
+            "slot": "dl-economy",
+            "flight": "dl",
+            "cabin": "ECONOMY",
+            "fare_cents": 33900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "ua-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOYALTY_PROGRAM_PREFERENCE",
+      "PREFERRED_CARRIER_REQUIRED"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FREQUENT_FLYER",
+      "LOWEST_LOGICAL_AIRFARE",
+      "PREFERRED_VENDORS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        461,
+        464
+      ],
+      "sha256": "7c6842d70d3a6995ef0ab8d578be71842e6b51044ca1bdbc57b333affb17e008",
+      "quote": "participation in these programs must not influence flight selection, which would result in incremental cost to the Company beyond the lowest logical airfare available, as defined, or which results in the use of a non-preferred vendor over a preferred even if the costs are equal.",
+      "why": "no non-preferred airline for miles, even at an equal fare"
+    },
+    {
+      "lines": [
+        400,
+        401
+      ],
+      "sha256": "69552a584e57eb75ea62fca9b53c0e92e5fd398862c5bffb4cc48392ae8c3b73",
+      "quote": "Travelers will be required to utilize preferred vendors if the fare offered is equal to or less than that offered by a non-preferred vendor.",
+      "why": "preferred airline at an equal or lower fare"
+    },
+    {
+      "lines": [
+        331,
+        332
+      ],
+      "sha256": "f0150554e6d16f31083e803e1f29e77ae2a2a47d959417ae3da089d184bbea03",
+      "quote": "Travelers are required to utilize preferred vendors (airline, lodging, car rental, rail, etc.) with whom the Company has negotiated special rates and/or concessions, if equal to or less than other options.",
+      "why": "preferred vendors (general information)"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Equal fares: the preferred airline is required (400-401, 331-332), and frequent-flyer programs must not lead to a non-preferred vendor 'even if the costs are equal' (463-464)."
+}

@@ -1,0 +1,186 @@
+{
+  "id": "zephyr-mire",
+  "category": "distractor",
+  "overlays": [
+    "multi_traveller"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Please put me on the 7 a.m. United flight to LaGuardia on December 10 with the leadership team for the investor day. Economy.",
+  "trip": {
+    "traveller_name": "Julia Fenwick",
+    "traveller_title": "Director, Corporate Communications",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Gloria Benton, Senior Vice President, Human Resources",
+    "origin": "ORD",
+    "destination": "LGA",
+    "travel_date": "2026-12-10",
+    "return_date": "",
+    "booking_date": "2026-12-01",
+    "purpose": "Investor day in New York",
+    "purpose_kind": "INTERNAL_MEETING",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [
+      {
+        "name": "Gloria Benton",
+        "title": "Senior Vice President, Human Resources",
+        "elt_member": true,
+        "flights": [
+          "UA 375"
+        ]
+      },
+      {
+        "name": "Diane Kessler",
+        "title": "Senior Vice President, Global Operations",
+        "elt_member": true,
+        "flights": [
+          "UA 375"
+        ]
+      },
+      {
+        "name": "Victor Hayes",
+        "title": "Senior Vice President, Strategy",
+        "elt_member": true,
+        "flights": [
+          "UA 375"
+        ]
+      },
+      {
+        "name": "Ruth Okafor",
+        "title": "Senior Vice President, Quality",
+        "elt_member": true,
+        "flights": [
+          "UA 375"
+        ]
+      },
+      {
+        "name": "Sam Ito",
+        "title": "Director, Investor Relations",
+        "elt_member": false,
+        "flights": [
+          "UA 375"
+        ]
+      }
+    ],
+    "notes": [
+      "Four ELT members and one other employee are booked on UA 375."
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "LGA",
+        "date": "2026-12-10",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ua": {
+            "carrier": "UA",
+            "depart": "07:00",
+            "minutes": [
+              125
+            ]
+          },
+          "aa": {
+            "carrier": "AA",
+            "depart": "08:30",
+            "minutes": [
+              130
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 22600
+          },
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 25100
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "ua-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "CLASS_OF_SERVICE",
+      "KEY_PERSONNEL",
+      "LOWEST_LOGICAL_AIRFARE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        490,
+        494
+      ],
+      "sha256": "00f5ce59c78e15a6dea696190ed0e21f5661e6901280c8929b4890f776baa90c",
+      "quote": "Any exceptions to the following will require the advanced approval of the Company's President & Chief Executive Officer (CEO): • No more than 4 ELT members may travel together. • No more than 2 of the following may travel together: President and CEO, Chief Financial Officer, SVP Corporate Secretary & Chief Legal Officer.",
+      "why": "who may travel together, and the CEO's approval for exceptions"
+    },
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    },
+    {
+      "lines": [
+        425,
+        426
+      ],
+      "sha256": "b021467695bac99153170b420ae3b082058086b81f0fc7cd92bb8b5fdcf8b922",
+      "quote": "Employees are to use the lowest logical airfare as defined in Section 3.2.",
+      "why": "the lowest logical airfare"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        487,
+        488
+      ],
+      "quote": "it is recommended to avoid planning or creating travel plans that place large employee groups together in a single aircraft",
+      "why": "a recommendation; the limits count ELT members and officers only"
+    }
+  ],
+  "design_notes": "Four ELT members are on UA 375; the traveller is not on the ELT and is none of the three named officers, so no limit of lines 492-494 is reached; the advice against large groups (487-488) is a recommendation. The lowest fare."
+}

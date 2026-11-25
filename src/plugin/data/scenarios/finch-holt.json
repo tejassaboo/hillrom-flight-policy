@@ -1,0 +1,151 @@
+{
+  "id": "finch-holt",
+  "category": "flag",
+  "overlays": [
+    "approval_required",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [
+    "cinder-fell",
+    "quince-firth"
+  ],
+  "ambiguity_note": "none: a sign-off is missing; the text is clear",
+  "request": "I have to be at the Frankfurt distributor training on December 10. Economy is fine. My manager Mark already signed off on the trip by email.",
+  "trip": {
+    "traveller_name": "Kevin Marsh",
+    "traveller_title": "Clinical Education Manager",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Mark Ellison, Director, Clinical Education",
+    "origin": "ORD",
+    "destination": "FRA",
+    "travel_date": "2026-12-10",
+    "return_date": "",
+    "booking_date": "2026-11-28",
+    "purpose": "Distributor training in Frankfurt",
+    "purpose_kind": "TRAINING",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "",
+    "requested_airline_why": "",
+    "preferred_airlines": [],
+    "companion_business_purpose": "",
+    "approvals": [
+      {
+        "approver_name": "Mark Ellison",
+        "approver_title": "Director, Clinical Education",
+        "subject": "TRIP",
+        "in_writing": true,
+        "given_on": "2026-11-26"
+      }
+    ],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "FRA",
+        "date": "2026-12-10",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "ua": {
+            "carrier": "UA",
+            "depart": "17:40",
+            "minutes": [
+              530
+            ]
+          },
+          "lh": {
+            "carrier": "LH",
+            "depart": "20:15",
+            "minutes": [
+              535
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 84500
+          },
+          {
+            "slot": "lh-economy",
+            "flight": "lh",
+            "cabin": "ECONOMY",
+            "fare_cents": 81900
+          },
+          {
+            "slot": "ua-premium",
+            "flight": "ua",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 152000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "lh-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED",
+      "INTERCONTINENTAL_PRE_APPROVAL"
+    ],
+    "approvers": [
+      "ELT_REPRESENTATIVE",
+      "REGIONAL_PRESIDENT"
+    ],
+    "clauses": [
+      "INTERNATIONAL_PRE_APPROVAL"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        288,
+        290
+      ],
+      "sha256": "54d998313e13d0e4e42659fbb824713f0514e79036ecfa7c8e7f4c3c9a93f66b",
+      "quote": "International travel (travel between continents) requires pre-travel authorization from the employee's ELT representative or Regional President. Such approval should be documented in writing",
+      "why": "authorization for travel between continents"
+    },
+    {
+      "lines": [
+        424,
+        435
+      ],
+      "sha256": "c3920b5bf71b81cfbb55bc3d026d95f8947b6979c5ad4a7612ba45c2a6ee358e",
+      "quote": "3.1 Airline Class of Service Employees are to use the lowest logical airfare as defined in Section 3.2. Class of service is predicated upon the length of individual flight segment and position in the Company as follows: Segment Duration Position < 6 hours > 6 hours and < 10 hours > 10 hours ELT Standard Business Standard Business Standard Business Vice Presidents and above Coach / Economy Standard Business Standard Business All other employees Coach / Economy Coach/ Economy Premium Coach / Economy Plus",
+      "why": "the class of service per segment length and position"
+    },
+    {
+      "lines": [
+        425,
+        426
+      ],
+      "sha256": "b021467695bac99153170b420ae3b082058086b81f0fc7cd92bb8b5fdcf8b922",
+      "quote": "Employees are to use the lowest logical airfare as defined in Section 3.2.",
+      "why": "the lowest logical airfare"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Travel between continents needs pre-travel authorization from the employee's ELT representative or Regional President (288-290); only the Director's email is on file, which is not that. Hold the lowest coach fare."
+}

@@ -1,0 +1,157 @@
+{
+  "id": "wren-scaur",
+  "category": "distractor",
+  "overlays": [],
+  "twin_of": "vetch-linn",
+  "twin_fact": "United's fare equal to American's or 100 cents above",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Boston on December 16 for the Mass General meeting. Put me on American - I'm close to Platinum, and it's a dollar cheaper than United anyway. Economy.",
+  "trip": {
+    "traveller_name": "Megan Shaw",
+    "traveller_title": "Regional Sales Manager",
+    "elt_member": false,
+    "passenger": "EMPLOYEE",
+    "accompanies": "",
+    "home_country": "US",
+    "elt_representative": "Diane Kessler",
+    "supervisor": "Paul Grady, Area Director",
+    "origin": "ORD",
+    "destination": "BOS",
+    "travel_date": "2026-12-16",
+    "return_date": "",
+    "booking_date": "2026-12-02",
+    "purpose": "Meeting at a hospital customer in Boston",
+    "purpose_kind": "CUSTOMER_VISIT",
+    "requested_cabin": "ECONOMY",
+    "prefers_nonstop": false,
+    "requested_refundable": false,
+    "requested_airline": "American Airlines",
+    "requested_airline_why": "Close to the next elite status level",
+    "preferred_airlines": [
+      "United Airlines"
+    ],
+    "companion_business_purpose": "",
+    "approvals": [],
+    "colleagues": [],
+    "notes": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "out",
+        "origin": "ORD",
+        "destination": "BOS",
+        "date": "2026-12-16",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "aa": {
+            "carrier": "AA",
+            "depart": "07:40",
+            "minutes": [
+              145
+            ]
+          },
+          "ua": {
+            "carrier": "UA",
+            "depart": "09:05",
+            "minutes": [
+              140
+            ]
+          },
+          "dl": {
+            "carrier": "DL",
+            "depart": "11:30",
+            "minutes": [
+              145
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "aa-economy",
+            "flight": "aa",
+            "cabin": "ECONOMY",
+            "fare_cents": 31400
+          },
+          {
+            "slot": "ua-economy",
+            "flight": "ua",
+            "cabin": "ECONOMY",
+            "fare_cents": 31500
+          },
+          {
+            "slot": "dl-economy",
+            "flight": "dl",
+            "cabin": "ECONOMY",
+            "fare_cents": 33900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "aa-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "LOYALTY_PROGRAM_PREFERENCE"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "AIR_TRAVEL",
+      "FREQUENT_FLYER",
+      "LOWEST_LOGICAL_AIRFARE",
+      "PREFERRED_VENDORS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        400,
+        401
+      ],
+      "sha256": "69552a584e57eb75ea62fca9b53c0e92e5fd398862c5bffb4cc48392ae8c3b73",
+      "quote": "Travelers will be required to utilize preferred vendors if the fare offered is equal to or less than that offered by a non-preferred vendor.",
+      "why": "preferred airline at an equal or lower fare"
+    },
+    {
+      "lines": [
+        331,
+        332
+      ],
+      "sha256": "f0150554e6d16f31083e803e1f29e77ae2a2a47d959417ae3da089d184bbea03",
+      "quote": "Travelers are required to utilize preferred vendors (airline, lodging, car rental, rail, etc.) with whom the Company has negotiated special rates and/or concessions, if equal to or less than other options.",
+      "why": "preferred vendors (general information)"
+    },
+    {
+      "lines": [
+        425,
+        426
+      ],
+      "sha256": "b021467695bac99153170b420ae3b082058086b81f0fc7cd92bb8b5fdcf8b922",
+      "quote": "Employees are to use the lowest logical airfare as defined in Section 3.2.",
+      "why": "the lowest logical airfare"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        461,
+        463
+      ],
+      "quote": "participation in these programs must not influence flight selection",
+      "why": "no incremental cost here: the requested airline is the cheapest"
+    }
+  ],
+  "design_notes": "The preferred airline is required only when its fare is equal to or less (400-401); United is 100 cents dearer, so American, the lowest fare, which the frequent-flyer clause (461-464) does not forbid."
+}
